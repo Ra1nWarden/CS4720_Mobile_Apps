@@ -7,7 +7,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,38 +16,42 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //GPS
-    private LocationListener location;
-    private LocationManager locManager;
+    private static final long LOCATION_UPDATE_MIN_TIME = 100L;
+    private static final float LOCATION_UPDATE_MIN_DIST = 1.0f;
 
-    private TextView test;
     private TextView returnValue;
     private EditText editValue;
-    private Button submitValue;
+    private Button submitButton;
+    private TextView locationLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        submitValue=(Button) findViewById(R.id.returnInput);
-        returnValue=(TextView) findViewById(R.id.returned);
-        editValue=(EditText) findViewById(R.id.editText);
+        submitButton = (Button) findViewById(R.id.returnInput);
+        returnValue = (TextView) findViewById(R.id.returned);
+        editValue = (EditText) findViewById(R.id.editText);
+        locationLabel = (TextView) findViewById(R.id.loc);
 
-        submitValue.setOnClickListener(new View.OnClickListener() {
+        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 returnValue.setText(editValue.getText());
             }
         });
 
-        test=(TextView) findViewById(R.id.lat);
-        locManager=(LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        setUpLocationManager();
+    }
 
-        location=new LocationListener() {
+    private void setUpLocationManager() {
+        LocationManager locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        LocationListener locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                test.setText(Double.toString(location.getLatitude()));
+                locationLabel.setText(Double.toString(location.getLatitude()) + ","
+                        + Double.toString(location.getLongitude()));
             }
 
             @Override
@@ -67,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        if (checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION,0,0)>=0) {
-            locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,100L,1.0f,location);
+        if (checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION, 0, 0) >= 0) {
+            locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
+                    LOCATION_UPDATE_MIN_TIME, LOCATION_UPDATE_MIN_DIST, locationListener);
         }
-
     }
 
     @Override

@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         if (checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION, 0, 0) >= 0) {
-            locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
+            locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
                     LOCATION_UPDATE_MIN_TIME, LOCATION_UPDATE_MIN_DIST, locationListener);
         }
     }

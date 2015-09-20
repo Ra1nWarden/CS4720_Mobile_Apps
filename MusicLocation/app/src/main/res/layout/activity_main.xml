@@ -41,4 +41,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@id/returnInput" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See Local Hits"
+        android:id="@+id/popularLink"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/returnInput"
+        android:layout_toEndOf="@+id/returnInput"
+        android:layout_marginBottom="149dp" />
 </RelativeLayout>

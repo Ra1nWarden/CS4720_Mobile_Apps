@@ -2,6 +2,7 @@ package edu.virginia.cs.musiclocation;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editValue;
     private Button submitButton;
     private TextView locationLabel;
+    private Button localButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +35,20 @@ public class MainActivity extends AppCompatActivity {
         returnValue = (TextView) findViewById(R.id.returned);
         editValue = (EditText) findViewById(R.id.editText);
         locationLabel = (TextView) findViewById(R.id.loc);
+        localButton = (Button) findViewById(R.id.popularLink);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 returnValue.setText(editValue.getText());
+            }
+        });
+
+        localButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(), PopularActivity.class);
+                startActivity(i);
             }
         });
 
@@ -71,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         if (checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION, 0, 0) >= 0) {
-            locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+            locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
                     LOCATION_UPDATE_MIN_TIME, LOCATION_UPDATE_MIN_DIST, locationListener);
         }
     }

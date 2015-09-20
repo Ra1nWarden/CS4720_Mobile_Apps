@@ -6,14 +6,26 @@ import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,11 +37,14 @@ public class MainActivity extends AppCompatActivity {
     private Button submitButton;
     private TextView locationLabel;
     private Button localButton;
+    private String Stream_URL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new downloadClass().execute();
 
         submitButton = (Button) findViewById(R.id.returnInput);
         returnValue = (TextView) findViewById(R.id.returned);
@@ -107,5 +122,55 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public class downloadClass extends AsyncTask<String, Integer, Integer> {
+
+        @Override
+        public Integer doInBackground(String... input) {
+            String JSON_URL="http://api.soundcloud.com/tracks/222906446?client_id=a9e1ea232bfff486717273c718914e5b";
+            String JSONString="";
+            String nextLine="";
+            try {
+                InputStream stream1=new URL(JSON_URL).openStream();
+                InputStreamReader stream2=new InputStreamReader(stream1);
+                BufferedReader stream3=new BufferedReader(stream2);
+                nextLine=stream3.readLine();
+                JSONString=JSONString+nextLine;
+            } catch (Exception e) {
+                Log.d("ERROR",e.toString());
+                Log.d("ERROR","Download Issue");
+            }
+
+            JSONObject object1;
+            Stream_URL="";
+            Log.d("JSON",JSONString);
+            try {
+                object1=new JSONObject(JSONString);
+                Stream_URL=object1.getString("download_url");
+                Stream_URL=Stream_URL+"?client_id=a9e1ea232bfff486717273c718914e5b";
+            }
+            catch (Exception e) {
+                Log.d("ERROR","JSON Issue");
+            }
+
+            return 0;
+        }
+
+        @Override
+        public void onPostExecute(Integer input) {
+            MediaPlayer mp=new MediaPlayer();
+            mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            try {
+                Log.d("JSON",Stream_URL);
+                mp.setDataSource(Stream_URL);
+                mp.prepare();
+                mp.start();
+            }
+            catch (Exception e) {
+                Log.d("ERROR",e.toString());
+                Log.d("ERROR","Stream Issue");
+            }
+        }
     }
 }

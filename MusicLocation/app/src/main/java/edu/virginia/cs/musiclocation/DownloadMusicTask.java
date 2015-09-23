@@ -28,8 +28,8 @@ public final class DownloadMusicTask extends AsyncTask<String, Integer, Void> {
     private static final String ARTWORK_KEY = "artwork_url";
     private static final String STREAM_KEY = "download_url";
 
-    private String Stream_URL;
-    private String Image_URL;
+    private String streamURL;
+    private String imageURL;
     private Bitmap imageCoverArt;
 
     private final MediaPlayer player;
@@ -51,14 +51,13 @@ public final class DownloadMusicTask extends AsyncTask<String, Integer, Void> {
             stream2.close();
             stream3.close();
             JSONObject parsedJSON = new JSONObject(JSONString);
-            Stream_URL = parsedJSON.getString(STREAM_KEY);
-            Stream_URL = Stream_URL + CLIENT_ID_URL;
-            Image_URL = parsedJSON.getString(ARTWORK_KEY);
-            Image_URL = Image_URL + CLIENT_ID_URL;
-            InputStream image_stream = new URL(Image_URL).openStream();
+            streamURL = parsedJSON.getString(STREAM_KEY);
+            streamURL = streamURL + CLIENT_ID_URL;
+            imageURL = parsedJSON.getString(ARTWORK_KEY);
+            imageURL = imageURL + CLIENT_ID_URL;
+            InputStream image_stream = new URL(imageURL).openStream();
             imageCoverArt = BitmapFactory.decodeStream(image_stream);
             image_stream.close();
-
         } catch (Exception e) {
             if (Log.isLoggable(TAG, Log.ERROR)) {
                 Log.e(TAG, "Error in decoding json. ", e);
@@ -71,7 +70,7 @@ public final class DownloadMusicTask extends AsyncTask<String, Integer, Void> {
     public void onPostExecute(Void ret) {
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
         try {
-            player.setDataSource(Stream_URL);
+            player.setDataSource(streamURL);
             player.prepare();
             player.start();
         } catch (Exception e) {

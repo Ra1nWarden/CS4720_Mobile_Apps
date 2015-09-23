@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public final class MainActivity extends AppCompatActivity {
 
     private static final long LOCATION_UPDATE_MIN_TIME = 100L;
     private static final float LOCATION_UPDATE_MIN_DIST = 1.0f;

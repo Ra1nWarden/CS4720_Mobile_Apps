@@ -8,9 +8,12 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 
 /**
- * Created by zihao on 9/22/15.
+ * A music player that plays music from soundcloud.
  */
-public class OnlineMusicPlayerActivity extends Activity {
+public final class OnlineMusicPlayerActivity extends Activity {
+
+    // TODO: This track id could be randomly generated.
+    private static final String TRACK_URL = "222906446";
 
     private MediaPlayer mp;
     private MediaController music_player;
@@ -85,7 +88,7 @@ public class OnlineMusicPlayerActivity extends Activity {
         AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
 
-        new DownloadMusicTask(mp, albumCover).execute("222906446");
+        new DownloadMusicTask(mp, albumCover).execute(TRACK_URL);
 
     }
 }

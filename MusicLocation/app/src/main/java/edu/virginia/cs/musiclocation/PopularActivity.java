@@ -1,13 +1,12 @@
 package edu.virginia.cs.musiclocation;
 
 import android.app.ListActivity;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 
-public class PopularActivity extends ListActivity {
+public final class PopularActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

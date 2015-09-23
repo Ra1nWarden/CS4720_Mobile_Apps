@@ -8,7 +8,7 @@ import android.os.Bundle;
 /**
  * A class that plays static music.
  */
-public class StaticMusicPlayerActivity extends Activity {
+public final class StaticMusicPlayerActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstance) {

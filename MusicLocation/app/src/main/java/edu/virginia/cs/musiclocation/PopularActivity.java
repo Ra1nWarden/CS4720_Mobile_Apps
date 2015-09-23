@@ -1,15 +1,9 @@
 package edu.virginia.cs.musiclocation;
 
 import android.app.ListActivity;
-import android.database.DataSetObserver;
-import android.support.v7.app.AppCompatActivity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 
 import java.util.ArrayList;
 
@@ -18,7 +12,7 @@ public class PopularActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popular);
+        setContentView(R.layout.popular_activity);
         ArrayList<String> topSongs=new ArrayList<String>();
         topSongs.add("Test1");
         topSongs.add("Test2");

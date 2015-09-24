@@ -26,7 +26,7 @@ public final class MainActivity extends AppCompatActivity {
     private TextView locationLabel;
     private Button localButton;
     private Button onlineMusicPlayerButton;
-    private Button staticMusicPlayerButton;
+    //private Button staticMusicPlayerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public final class MainActivity extends AppCompatActivity {
         locationLabel = (TextView) findViewById(R.id.loc);
         localButton = (Button) findViewById(R.id.popularLink);
         onlineMusicPlayerButton = (Button) findViewById(R.id.onlineMusicPlayerLink);
-        staticMusicPlayerButton = (Button) findViewById(R.id.staticMusicPlayerLink);
+        //staticMusicPlayerButton = (Button) findViewById(R.id.staticMusicPlayerLink);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,13 +65,13 @@ public final class MainActivity extends AppCompatActivity {
             }
         });
 
-        staticMusicPlayerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, StaticMusicPlayerActivity.class);
-                startActivity(i);
-            }
-        });
+//        staticMusicPlayerButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(MainActivity.this, StaticMusicPlayerActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
         setUpLocationManager();
     }

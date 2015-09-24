@@ -5,6 +5,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.MediaController;
 
@@ -46,6 +47,12 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         mediaController.hide();
         mediaPlayer.stop();
         mediaPlayer.release();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        mediaController.show();
+        return true;
     }
 
     @Override

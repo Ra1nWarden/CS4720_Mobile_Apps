@@ -59,13 +59,13 @@
         android:layout_centerHorizontal="true"
         android:text="Launch Online Player"/>
 
-    <Button
-        android:id="@+id/staticMusicPlayerLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/onlineMusicPlayerLink"
-        android:layout_centerHorizontal="true"
-        android:text="Launch Static Player"/>
+    <!--<Button-->
+        <!--android:id="@+id/staticMusicPlayerLink"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/onlineMusicPlayerLink"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:text="Launch Static Player"/>-->
 
 
 </LinearLayout>

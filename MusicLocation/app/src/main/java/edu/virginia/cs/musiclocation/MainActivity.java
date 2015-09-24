@@ -60,6 +60,7 @@ public final class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, OnlineMusicPlayerActivity.class);
+                i.putExtra(OnlineMusicPlayerActivity.TRACK_URL_KEY, "222906446");
                 startActivity(i);
             }
         });
@@ -102,7 +103,7 @@ public final class MainActivity extends AppCompatActivity {
         };
 
         if (checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION, 0, 0) >= 0) {
-            locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+            locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
                     LOCATION_UPDATE_MIN_TIME, LOCATION_UPDATE_MIN_DIST, locationListener);
         }
     }

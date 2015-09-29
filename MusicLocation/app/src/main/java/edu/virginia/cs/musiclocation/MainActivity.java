@@ -3,6 +3,7 @@ package edu.virginia.cs.musiclocation;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -26,6 +27,8 @@ public final class MainActivity extends AppCompatActivity {
     private TextView locationLabel;
     private Button localButton;
     private Button onlineMusicPlayerButton;
+    private SQLiteDatabase database;
+    private String database_path;
     //private Button staticMusicPlayerButton;
 
     @Override
@@ -40,6 +43,14 @@ public final class MainActivity extends AppCompatActivity {
         localButton = (Button) findViewById(R.id.popularLink);
         onlineMusicPlayerButton = (Button) findViewById(R.id.onlineMusicPlayerLink);
         //staticMusicPlayerButton = (Button) findViewById(R.id.staticMusicPlayerLink);
+
+        //Initialize Database
+        database_path=getApplicationInfo().dataDir+"/musicData.db";
+        database=SQLiteDatabase.openOrCreateDatabase(database_path,null);
+        database.execSQL("CREATE TABLE IF NOT EXISTS songList("+
+                "ID INTEGER,"+
+                "Ref VARCHAR(12)"+
+                ")");
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,14 +1,17 @@
 package edu.virginia.cs.musiclocation;
 
 import android.Manifest;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +32,7 @@ public final class MainActivity extends AppCompatActivity {
     private Button onlineMusicPlayerButton;
     private SQLiteDatabase database;
     private String database_path;
+    private String username;
     //private Button staticMusicPlayerButton;
 
     @Override
@@ -47,15 +51,39 @@ public final class MainActivity extends AppCompatActivity {
         //Initialize Database
         database_path=getApplicationInfo().dataDir+"/musicData.db";
         database=SQLiteDatabase.openOrCreateDatabase(database_path,null);
-        database.execSQL("CREATE TABLE IF NOT EXISTS songList("+
-                "ID INTEGER,"+
-                "Ref VARCHAR(12)"+
+        //This is the table for metadata (such as name)
+        database.execSQL("CREATE TABLE IF NOT EXISTS meta("+
+                "Name VARCHAR(100)"+
                 ")");
+        //This is the table for a local list of songs
+        database.execSQL("CREATE TABLE IF NOT EXISTS songList(" +
+                "ID INTEGER," +
+                "Ref VARCHAR(12)" +
+                ")");
+        //This is the table for each grid quad you enter (supports up to 999 top songs)
+        database.execSQL("CREATE TABLE IF NOT EXISTS GPSList(" +
+                "LONG DOUBLE," +
+                "LAT DOUBLE," +
+                "Ref VARCHAR(320)" +
+                ")");
+
+        SQLiteCursor meta_c=(SQLiteCursor)database.rawQuery("SELECT * FROM meta",null);
+        if (meta_c.getCount()>0) {
+            Log.d("WOOOOO","WOOOOOOOOOOO");
+            meta_c.moveToFirst();
+            returnValue.setText(meta_c.getString(meta_c.getColumnIndex("Name")));
+        }
+        else {
+            database.execSQL("INSERT INTO meta VALUES (\"\")");
+        }
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 returnValue.setText(editValue.getText());
+                ContentValues cv=new ContentValues();
+                cv.put("name",editValue.getText().toString());
+                database.update("meta",cv,null,null);
             }
         });
 

@@ -2,6 +2,7 @@ package edu.virginia.cs.musiclocation;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +15,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class StartActivity extends AppCompatActivity {
 
+    private static final String TAG = "StartActivity";
+
     private Button submitButton;
-    private TextView returnValue;
     private EditText editValue;
     private SQLiteDatabase database;
     private String database_path;
@@ -30,25 +36,24 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
 
         submitButton = (Button) findViewById(R.id.returnInput);
-        returnValue = (TextView) findViewById(R.id.returned);
         editValue = (EditText) findViewById(R.id.editText);
 
         //Initialize Database
-        database_path=getApplicationInfo().dataDir+"/musicData.db";
-        File dbCheck=new File(database_path);
+        database_path = getApplicationInfo().dataDir + "/musicData.db";
+        File dbCheck = new File(database_path);
         if (dbCheck.exists()) {
             Intent i = new Intent(StartActivity.this, MainActivity.class);
             startActivity(i);
         }
 
-        database= SQLiteDatabase.openOrCreateDatabase(database_path, null);
+        database = SQLiteDatabase.openOrCreateDatabase(database_path, null);
         //This is the table for metadata (such as name)
-        database.execSQL("CREATE TABLE IF NOT EXISTS meta("+
-                "Name VARCHAR(100)"+
+        database.execSQL("CREATE TABLE IF NOT EXISTS meta(" +
+                "Name VARCHAR(100)" +
                 ")");
         //This is the table for a local list of songs
         database.execSQL("CREATE TABLE IF NOT EXISTS songList(" +
-                "ID INTEGER," +
+                "Id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "Ref VARCHAR(12)" +
                 ")");
         //This is the table for each grid quad you enter (supports up to 999 top songs)
@@ -58,14 +63,31 @@ public class StartActivity extends AppCompatActivity {
                 "Ref VARCHAR(320)" +
                 ")");
 
-        SQLiteCursor meta_c=(SQLiteCursor)database.rawQuery("SELECT * FROM meta",null);
-        if (meta_c.getCount()>0) {
+        SQLiteCursor meta_c = (SQLiteCursor) database.rawQuery("SELECT * FROM meta", null);
+        if (meta_c.getCount() > 0) {
             meta_c.moveToFirst();
-        }
-        else {
+        } else {
             database.execSQL("INSERT INTO meta VALUES (\"\")");
         }
         meta_c.close();
+
+        try {
+            AssetManager manager = getAssets();
+            InputStream inputStream = manager.open("static_songs.txt");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while((line = reader.readLine()) != null) {
+                ContentValues row = new ContentValues();
+                row.put("Ref", line);
+                Log.d(TAG, "inserting row " + row);
+                database.insert("songList", null, row);
+            }
+        } catch (IOException e) {
+            if (Log.isLoggable(TAG, Log.ERROR)) {
+                Log.e(TAG, "Error opening file.", e);
+            }
+        }
+
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override

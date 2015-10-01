@@ -1,10 +1,11 @@
 package edu.virginia.cs.musiclocation;
 
 import android.app.ListActivity;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-
-import java.util.ArrayList;
+import android.support.v4.widget.CursorAdapter;
+import android.support.v4.widget.SimpleCursorAdapter;
 
 public final class PopularActivity extends ListActivity {
 
@@ -12,13 +13,15 @@ public final class PopularActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popular_activity);
-        ArrayList<String> topSongs=new ArrayList<String>();
-        topSongs.add("Test1");
-        topSongs.add("Test2");
-
-        ArrayAdapter<String> listA=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
-        listA.addAll(topSongs);
-        setListAdapter(listA);
+        String database_path = getApplicationInfo().dataDir + "/musicData.db";
+        SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(database_path, null);
+        Cursor cursor = database.rawQuery("SELECT Id as _id, Ref FROM songList", null);
+        if (cursor.moveToFirst()) {
+            String columns[] = {"Ref"};
+            int to[] = {R.id.song_id};
+            setListAdapter(new SimpleCursorAdapter(this, R.layout.song_list_entry, cursor, columns,
+                    to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER));
+        }
     }
 
 }

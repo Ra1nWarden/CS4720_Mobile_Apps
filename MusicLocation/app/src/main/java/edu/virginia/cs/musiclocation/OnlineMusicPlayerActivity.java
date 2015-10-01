@@ -49,9 +49,9 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
     @Override
     public void onStop() {
         super.onStop();
-        mediaController.hide();
-        mediaPlayer.stop();
-        mediaPlayer.release();
+        //mediaController.hide();
+        mediaPlayer.pause();
+        //mediaPlayer.release();
     }
 
     @Override
@@ -61,9 +61,14 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
     }
 
     @Override
-    public void start() {
+    public void onStart() {
+        super.onStart();
+        mediaPlayer.seekTo(mediaPlayer.getCurrentPosition());
         mediaPlayer.start();
     }
+
+    @Override()
+    public void start() {mediaPlayer.start();}
 
     @Override
     public void pause() {

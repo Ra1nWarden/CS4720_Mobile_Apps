@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Song Title"
+        android:text="Loading Song Title"
         android:id="@+id/song_title"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.02" />
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Artist"
+        android:text="Loading Artist"
         android:id="@+id/song_artist"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.03" />

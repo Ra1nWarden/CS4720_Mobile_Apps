@@ -55,7 +55,8 @@ public class StartActivity extends AppCompatActivity {
             //This is the table for a local list of songs
             database.execSQL("CREATE TABLE IF NOT EXISTS songList(" +
                     "Id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "Ref VARCHAR(12)" +
+                    "Ref VARCHAR(12)," +
+                    "Count INTEGER" +
                     ")");
             //This is the table for each grid quad you enter (supports up to 999 top songs)
             database.execSQL("CREATE TABLE IF NOT EXISTS GPSList(" +
@@ -80,6 +81,7 @@ public class StartActivity extends AppCompatActivity {
                 while((line = reader.readLine()) != null) {
                     ContentValues row = new ContentValues();
                     row.put("Ref", line);
+                    row.put("Count", 0);
                     Log.d(TAG, "inserting row " + row);
                     database.insert("songList", null, row);
                 }

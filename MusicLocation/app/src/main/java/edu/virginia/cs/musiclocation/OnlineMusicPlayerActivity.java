@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.TextView;
 
 /**
  * A music player that plays music from soundcloud.
@@ -21,6 +22,8 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
     private MediaPlayer mediaPlayer;
     private MediaController mediaController;
     private ImageView albumCover;
+    private TextView titleText;
+    private TextView artistText;
 
     @Override
     public void onCreate(Bundle savedInstance) {
@@ -32,13 +35,15 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         mediaController = new MediaController(this);
 
         albumCover = (ImageView) findViewById(R.id.album_cover);
+        titleText=(TextView) findViewById(R.id.song_title);
+        artistText=(TextView) findViewById(R.id.song_artist);
 
         AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
 
         String trackURL = getIntent().getStringExtra(TRACK_URL_KEY);
 
-        new DownloadMusicTask(mediaPlayer, albumCover).execute(trackURL);
+        new DownloadMusicTask(mediaPlayer, albumCover, titleText, artistText).execute(trackURL);
     }
 
     @Override

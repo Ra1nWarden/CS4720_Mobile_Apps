@@ -45,49 +45,50 @@ public class StartActivity extends AppCompatActivity {
             Intent i = new Intent(StartActivity.this, MainActivity.class);
             startActivity(i);
         }
+        else {
 
-        database = SQLiteDatabase.openOrCreateDatabase(database_path, null);
-        //This is the table for metadata (such as name)
-        database.execSQL("CREATE TABLE IF NOT EXISTS meta(" +
-                "Name VARCHAR(100)" +
-                ")");
-        //This is the table for a local list of songs
-        database.execSQL("CREATE TABLE IF NOT EXISTS songList(" +
-                "Id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "Ref VARCHAR(12)" +
-                ")");
-        //This is the table for each grid quad you enter (supports up to 999 top songs)
-        database.execSQL("CREATE TABLE IF NOT EXISTS GPSList(" +
-                "LONG DOUBLE," +
-                "LAT DOUBLE," +
-                "Ref VARCHAR(320)" +
-                ")");
+            database = SQLiteDatabase.openOrCreateDatabase(database_path, null);
+            //This is the table for metadata (such as name)
+            database.execSQL("CREATE TABLE IF NOT EXISTS meta(" +
+                    "Name VARCHAR(100)" +
+                    ")");
+            //This is the table for a local list of songs
+            database.execSQL("CREATE TABLE IF NOT EXISTS songList(" +
+                    "Id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "Ref VARCHAR(12)" +
+                    ")");
+            //This is the table for each grid quad you enter (supports up to 999 top songs)
+            database.execSQL("CREATE TABLE IF NOT EXISTS GPSList(" +
+                    "LONG DOUBLE," +
+                    "LAT DOUBLE," +
+                    "Ref VARCHAR(320)" +
+                    ")");
 
-        SQLiteCursor meta_c = (SQLiteCursor) database.rawQuery("SELECT * FROM meta", null);
-        if (meta_c.getCount() > 0) {
-            meta_c.moveToFirst();
-        } else {
-            database.execSQL("INSERT INTO meta VALUES (\"\")");
-        }
-        meta_c.close();
-
-        try {
-            AssetManager manager = getAssets();
-            InputStream inputStream = manager.open("static_songs.txt");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            String line;
-            while((line = reader.readLine()) != null) {
-                ContentValues row = new ContentValues();
-                row.put("Ref", line);
-                Log.d(TAG, "inserting row " + row);
-                database.insert("songList", null, row);
+            SQLiteCursor meta_c = (SQLiteCursor) database.rawQuery("SELECT * FROM meta", null);
+            if (meta_c.getCount() > 0) {
+                meta_c.moveToFirst();
+            } else {
+                database.execSQL("INSERT INTO meta VALUES (\"\")");
             }
-        } catch (IOException e) {
-            if (Log.isLoggable(TAG, Log.ERROR)) {
-                Log.e(TAG, "Error opening file.", e);
+            meta_c.close();
+
+            try {
+                AssetManager manager = getAssets();
+                InputStream inputStream = manager.open("static_songs.txt");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                String line;
+                while((line = reader.readLine()) != null) {
+                    ContentValues row = new ContentValues();
+                    row.put("Ref", line);
+                    Log.d(TAG, "inserting row " + row);
+                    database.insert("songList", null, row);
+                }
+            } catch (IOException e) {
+                if (Log.isLoggable(TAG, Log.ERROR)) {
+                    Log.e(TAG, "Error opening file.", e);
+                }
             }
         }
-
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override

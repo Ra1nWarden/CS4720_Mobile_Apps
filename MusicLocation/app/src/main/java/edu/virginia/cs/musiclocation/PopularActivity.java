@@ -15,8 +15,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.parse.CountCallback;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
@@ -80,7 +82,7 @@ public final class PopularActivity extends ListActivity {
                 database.close();
 
                 Intent i = new Intent(PopularActivity.this, OnlineMusicPlayerActivity.class);
-                i.putExtra(OnlineMusicPlayerActivity.TRACK_URL_KEY, songId);
+                i.putExtra(OnlineMusicPlayerActivity.PARSE_OBJECT_ID, songId);
                 startActivity(i);
             }
         });

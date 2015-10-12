@@ -15,7 +15,7 @@ public class MusicLocationApplication extends Application {
         super.onCreate();
         ParseObject.registerSubclass(Song.class);
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "w9jkBo7rPSAK6mld5HTLCndQhCoY6g0BgLD8Cwvi",
-                "9243kDKt4VVCzfzsubvfUHmSNBF0NTLKmx4tvpJn");
+        Parse.initialize(this, "Y4bijYndUvKa8xtvb5aFXsXffwwHuW0jhMYybK25",
+                "lujWLXCF1lAh28pGqQFls9d3CmUpjEzKCmCcNwoC");
     }
 }

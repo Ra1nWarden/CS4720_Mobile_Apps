@@ -15,6 +15,10 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+
 /**
  * A music player that plays music from soundcloud.
  */
@@ -37,6 +41,8 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
     private Sensor accel;
     private SensorManager sm;
 
+    private String parseObjectId;
+
     @Override
     public void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
@@ -56,13 +62,20 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume
                 (AudioManager.STREAM_MUSIC) / 3, 0);
-
-        String parseObjectId = getIntent().getStringExtra(PARSE_OBJECT_ID);
-
         sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         accel = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        new DownloadMusicTask(mediaPlayer, albumCover, titleText, artistText, this).execute
-                (parseObjectId);
+
+
+        parseObjectId = getIntent().getStringExtra(PARSE_OBJECT_ID);
+        ParseQuery.getQuery(Song.class).getInBackground(parseObjectId, new GetCallback<Song>() {
+            @Override
+            public void done(Song object, ParseException e) {
+                new DownloadMusicTask(mediaPlayer, albumCover, titleText, artistText,
+                        OnlineMusicPlayerActivity.this).execute
+                        ((String) object.get(Song.SOUND_CLOUD_ID_KEY));
+            }
+        });
+
     }
 
     @Override

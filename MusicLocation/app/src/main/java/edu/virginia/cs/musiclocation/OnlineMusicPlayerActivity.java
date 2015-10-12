@@ -187,3 +187,4 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         }
     }
 }
+

@@ -107,12 +107,15 @@ public final class DownloadMusicTask extends AsyncTask<String, Integer, Void> {
         }
 
         try {
-            if (imageCoverArt != null) {
-                if (found_art) {
+            if (found_art) {
+                if (imageCoverArt != null) {
                     albumCover.setImageBitmap(imageCoverArt);
                 } else {
                     albumCover.setImageDrawable(no_art);
                 }
+            }
+            else {
+                albumCover.setImageDrawable(no_art);
             }
             titleText.setText(title);
             artistText.setText(artist);

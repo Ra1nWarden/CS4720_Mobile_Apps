@@ -25,19 +25,20 @@ public final class PopularActivity extends ListActivity {
         String database_path = getApplicationInfo().dataDir + "/musicData.db";
         SQLiteDatabase database2 = SQLiteDatabase.openOrCreateDatabase(database_path, null);
         Cursor cursor = database2.rawQuery("SELECT Id as _id, Ref, Count FROM songList", null);
-        ArrayList<String> list_of_songs=new ArrayList<String>();
+        ArrayList<Song> list_of_songs=new ArrayList<Song>();
         int current_count=0;
         cursor.moveToFirst();
         while (current_count<cursor.getCount()) {
-            list_of_songs.add(cursor.getString(cursor.getColumnIndex("Ref"))+", Plays: "+cursor.getInt(cursor.getColumnIndex("Count")));
+            Song temp=new Song(cursor.getString(cursor.getColumnIndex("Ref")),
+                    cursor.getInt(cursor.getColumnIndex("Count")));
+            list_of_songs.add(temp);
             cursor.moveToNext();
             current_count++;
         }
         Log.d("ERROR",Integer.toString(list_of_songs.size()));
-        Log.d("ERROR",Integer.toString(current_count));
+        Log.d("ERROR", Integer.toString(current_count));
 
-        ArrayAdapter<String> AList=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
-        AList.addAll(list_of_songs);
+        SongAdapter AList=new SongAdapter(this, R.layout.song_layout, list_of_songs);
         setListAdapter(AList);
     }
 

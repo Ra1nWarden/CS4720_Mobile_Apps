@@ -15,38 +15,45 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public final class PopularActivity extends ListActivity {
+
+    private static final String TAG = "PopularActivity";
+
+    private SongAdapter adapter;
 
     @Override
     protected void onResume() {
         super.onResume();
-        String database_path = getApplicationInfo().dataDir + "/musicData.db";
-        SQLiteDatabase database2 = SQLiteDatabase.openOrCreateDatabase(database_path, null);
-        Cursor cursor = database2.rawQuery("SELECT Id as _id, Ref, Count FROM songList", null);
-        ArrayList<Song> list_of_songs=new ArrayList<Song>();
-        int current_count=0;
-        cursor.moveToFirst();
-        while (current_count<cursor.getCount()) {
-            Song temp=new Song(cursor.getString(cursor.getColumnIndex("Ref")),
-                    cursor.getInt(cursor.getColumnIndex("Count")));
-            list_of_songs.add(temp);
-            cursor.moveToNext();
-            current_count++;
-        }
-        Log.d("ERROR",Integer.toString(list_of_songs.size()));
-        Log.d("ERROR", Integer.toString(current_count));
-
-        SongAdapter AList=new SongAdapter(this, R.layout.song_layout, list_of_songs);
-        setListAdapter(AList);
+        ParseQuery.getQuery(Song.class).findInBackground(new FindCallback<Song>() {
+            @Override
+            public void done(List<Song> objects, ParseException e) {
+                if (e == null) {
+                    for (Song each : objects) {
+                        adapter.add(each);
+                    }
+                    adapter.notifyDataSetChanged();
+                } else {
+                    if (Log.isLoggable(TAG, Log.ERROR)) {
+                        Log.e(TAG, "Query parse database error. ", e);
+                    }
+                }
+            }
+        });
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popular_activity);
-
+        adapter = new SongAdapter(this, R.layout.song_layout);
+        setListAdapter(adapter);
 
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -56,17 +63,19 @@ public final class PopularActivity extends ListActivity {
 
                 String database_path = getApplicationInfo().dataDir + "/musicData.db";
                 SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(database_path, null);
-                String song=((Song) parent.getAdapter().getItem(position)).getID();
-                SQLiteCursor meta_c = (SQLiteCursor) database.rawQuery("SELECT * FROM songList WHERE Ref=" + song, null);
+                String song = (String) parent.getAdapter().getItem(position);
+                String song_cut = song.split(",")[0];
+                SQLiteCursor meta_c = (SQLiteCursor) database.rawQuery("SELECT * FROM songList " +
+                        "WHERE Ref=" + song_cut, null);
 
                 meta_c.moveToFirst();
                 int current_count = meta_c.getInt(meta_c.getColumnIndex("Count"));
                 CharSequence songId = meta_c.getString(meta_c.getColumnIndex("Ref"));
                 ContentValues tableVals = new ContentValues();
-                tableVals.put("Count", current_count+1);
+                tableVals.put("Count", current_count + 1);
 
-                Log.d("ERROR",Integer.toString(current_count));
-                database.update("songList", tableVals, "Ref=" + song, null);
+                Log.d("ERROR", Integer.toString(current_count));
+                database.update("songList", tableVals, "Ref=" + song_cut, null);
                 meta_c.close();
                 database.close();
 
@@ -78,3 +87,4 @@ public final class PopularActivity extends ListActivity {
     }
 
 }
+

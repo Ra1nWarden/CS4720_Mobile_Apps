@@ -35,4 +35,9 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         return output;
     }
+
+    @Override
+    public Song getItem(int position) {
+        return data.get(position);
+    }
 }

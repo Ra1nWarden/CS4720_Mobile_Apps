@@ -8,6 +8,7 @@ public class Song {
 
     public Song(String n, int p) {
         name=n;
+        id=n;
         plays=p;
         popularity=0;
     }
@@ -18,5 +19,9 @@ public class Song {
 
     public int getPlays() {
         return plays;
+    }
+
+    public String getID() {
+        return id;
     }
 }

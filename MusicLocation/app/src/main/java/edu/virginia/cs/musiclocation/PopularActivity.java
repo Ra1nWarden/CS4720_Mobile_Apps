@@ -56,9 +56,8 @@ public final class PopularActivity extends ListActivity {
 
                 String database_path = getApplicationInfo().dataDir + "/musicData.db";
                 SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(database_path, null);
-                String song=(String)parent.getAdapter().getItem(position);
-                String song_cut=song.split(",")[0];
-                SQLiteCursor meta_c = (SQLiteCursor) database.rawQuery("SELECT * FROM songList WHERE Ref=" + song_cut, null);
+                String song=((Song) parent.getAdapter().getItem(position)).getID();
+                SQLiteCursor meta_c = (SQLiteCursor) database.rawQuery("SELECT * FROM songList WHERE Ref=" + song, null);
 
                 meta_c.moveToFirst();
                 int current_count = meta_c.getInt(meta_c.getColumnIndex("Count"));
@@ -67,7 +66,7 @@ public final class PopularActivity extends ListActivity {
                 tableVals.put("Count", current_count+1);
 
                 Log.d("ERROR",Integer.toString(current_count));
-                database.update("songList", tableVals, "Ref=" + song_cut, null);
+                database.update("songList", tableVals, "Ref=" + song, null);
                 meta_c.close();
                 database.close();
 

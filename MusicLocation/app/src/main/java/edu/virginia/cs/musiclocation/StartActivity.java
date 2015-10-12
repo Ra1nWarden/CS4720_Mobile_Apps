@@ -44,8 +44,7 @@ public class StartActivity extends AppCompatActivity {
         if (dbCheck.exists()) {
             Intent i = new Intent(StartActivity.this, MainActivity.class);
             startActivity(i);
-        }
-        else {
+        } else {
 
             database = SQLiteDatabase.openOrCreateDatabase(database_path, null);
             //This is the table for metadata (such as name)
@@ -78,7 +77,7 @@ public class StartActivity extends AppCompatActivity {
                 InputStream inputStream = manager.open("static_songs.txt");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
                 String line;
-                while((line = reader.readLine()) != null) {
+                while ((line = reader.readLine()) != null) {
                     ContentValues row = new ContentValues();
                     row.put("Ref", line);
                     row.put("Count", 0);

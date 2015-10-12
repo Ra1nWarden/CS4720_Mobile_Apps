@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -67,18 +65,10 @@ public final class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, OnlineMusicPlayerActivity.class);
-                i.putExtra(OnlineMusicPlayerActivity.TRACK_URL_KEY, "222906446");
+                i.putExtra(OnlineMusicPlayerActivity.PARSE_OBJECT_ID, "222906446");
                 startActivity(i);
             }
         });
-
-//        staticMusicPlayerButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(MainActivity.this, StaticMusicPlayerActivity.class);
-//                startActivity(i);
-//            }
-//        });
 
         setUpLocationManager();
     }

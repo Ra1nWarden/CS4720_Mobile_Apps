@@ -30,11 +30,13 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
     private ImageView albumCover;
     private TextView titleText;
     private TextView artistText;
-    private double threshold;
+
 
     //Sensor
-    public Sensor accel;
-    public SensorManager sm;
+    private double threshold;
+    private long threshold_time=0;
+    private Sensor accel;
+    private SensorManager sm;
 
     @Override
     public void onCreate(Bundle savedInstance) {
@@ -59,14 +61,7 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
 
         sm=(SensorManager) getSystemService(Context.SENSOR_SERVICE);
         accel=sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        if (accel==null) {
-            Log.d("SENSOR_ERROR","1");
-        }
-        if (sm==null) {
-            Log.d("SENSOR_ERROR","2");
-        }
-
-        new DownloadMusicTask(mediaPlayer, albumCover, titleText, artistText).execute(trackURL);
+        new DownloadMusicTask(mediaPlayer, albumCover, titleText, artistText, this).execute(trackURL);
     }
 
     @Override
@@ -181,7 +176,10 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
     public void onSensorChanged(SensorEvent i) {
         double mag=Math.sqrt(Math.pow(i.values[0],2)+Math.pow(i.values[1],2)+Math.pow(i.values[2],2));
         if (mag>threshold) {
-            Log.d("SUCCESS",Double.toString(mag));
+            if (System.currentTimeMillis()-threshold_time>1500) {
+                threshold_time=System.currentTimeMillis();
+                seekTo(getCurrentPosition()+5000);
+            }
         }
     }
 }

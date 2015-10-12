@@ -1,10 +1,14 @@
 package edu.virginia.cs.musiclocation;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,15 +47,21 @@ public final class DownloadMusicTask extends AsyncTask<String, Integer, Void> {
     private final TextView titleText;
     private final TextView artistText;
 
-    public DownloadMusicTask(MediaPlayer player, ImageView albumCover, TextView titleView, TextView artistView) {
+    private Drawable no_art;
+    private boolean found_art;
+
+    public DownloadMusicTask(MediaPlayer player, ImageView albumCover, TextView titleView, TextView artistView, Context c_ref) {
         this.player = player;
         this.albumCover = albumCover;
         this.titleText = titleView;
         this.artistText = artistView;
+        found_art=false;
+        no_art=ContextCompat.getDrawable(c_ref,R.drawable.no_find_art);
     }
 
     @Override
     public Void doInBackground(String... input) {
+        found_art=false;
         try {
             InputStream stream1 = new URL(SOUND_CLOUD_URL + input[0] + CLIENT_ID_URL).openStream();
             InputStreamReader stream2 = new InputStreamReader(stream1);
@@ -65,15 +75,20 @@ public final class DownloadMusicTask extends AsyncTask<String, Integer, Void> {
             streamURL = streamURL + CLIENT_ID_URL;
             imageURL = parsedJSON.getString(ARTWORK_KEY);
             imageURL = imageURL + CLIENT_ID_URL;
+            artist=parsedJSON.getJSONObject(USER_KEY).getString(ARTIST_KEY);
+            title=parsedJSON.getString(TITLE_KEY);
+
+            //On some networks, this might not work correctly
+            Log.d("DOWNLOAD",imageURL);
             InputStream image_stream = new URL(imageURL).openStream();
             imageCoverArt = BitmapFactory.decodeStream(image_stream);
-            title=parsedJSON.getString(TITLE_KEY);
-            artist=parsedJSON.getJSONObject(USER_KEY).getString(ARTIST_KEY);
+            found_art=true;
             image_stream.close();
         } catch (Exception e) {
             if (Log.isLoggable(TAG, Log.ERROR)) {
                 Log.e(TAG, "Error in decoding json. ", e);
             }
+            imageCoverArt=null;
         }
         return null;
     }
@@ -93,7 +108,11 @@ public final class DownloadMusicTask extends AsyncTask<String, Integer, Void> {
 
         try {
             if (imageCoverArt != null) {
-                albumCover.setImageBitmap(imageCoverArt);
+                if (found_art) {
+                    albumCover.setImageBitmap(imageCoverArt);
+                } else {
+                    albumCover.setImageDrawable(no_art);
+                }
             }
             titleText.setText(title);
             artistText.setText(artist);

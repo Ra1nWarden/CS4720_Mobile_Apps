@@ -1,27 +1,27 @@
 package edu.virginia.cs.musiclocation;
 
-public class Song {
-    private String name;
-    private int plays;
-    private int popularity;
-    private String id;
+import com.parse.ParseObject;
 
-    public Song(String n, int p) {
-        name=n;
-        id=n;
-        plays=p;
-        popularity=0;
-    }
+public class Song extends ParseObject {
 
-    public String getName() {
-        return name;
+    private static final String SONG_TITLE_KEY = "songTitle";
+    private static final String PLAYS_KEY = "plays";
+    private static final String VOTES_KEY = "votes";
+    private static final String SOUND_CLOUD_ID_KEY = "soundCloudId";
+
+    public String getSongName() {
+        return (String) get(SONG_TITLE_KEY);
     }
 
     public int getPlays() {
-        return plays;
+        return (int) get(PLAYS_KEY);
     }
 
-    public String getID() {
-        return id;
+    public int getVotes() {
+        return (int) get(VOTES_KEY);
+    }
+
+    public int getId() {
+        return (int) get(SOUND_CLOUD_ID_KEY);
     }
 }

@@ -71,7 +71,7 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         titleText = (TextView) findViewById(R.id.song_title);
         artistText = (TextView) findViewById(R.id.song_artist);
         voteText = (TextView) findViewById(R.id.votes);
-        creditsButton=(ImageButton) findViewById(R.id.credits);
+        creditsButton = (ImageButton) findViewById(R.id.credits);
 
         AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume
@@ -83,6 +83,7 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
             @Override
             public void done(Song object, ParseException e) {
                 if (e == null) {
+
                     voteText.setText(Integer.toString(object.getVotes()));
                     titleText.setText(object.getSongName());
                     artistText.setText(object.getArtistName());

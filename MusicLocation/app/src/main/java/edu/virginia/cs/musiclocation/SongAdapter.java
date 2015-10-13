@@ -32,6 +32,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         nameView.setText(getItem(position).getSongName());
         playsView.setText(Integer.toString(getItem(position).getPlays()));
+        popView.setText(Integer.toString(getItem(position).getVotes()));
 
         return output;
     }

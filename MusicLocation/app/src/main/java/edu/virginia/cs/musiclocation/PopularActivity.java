@@ -60,29 +60,9 @@ public final class PopularActivity extends ListActivity {
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //TextView label = (TextView) view.findViewById(R.id.song_id);
-                //CharSequence songId = label.getText();
-
-                String database_path = getApplicationInfo().dataDir + "/musicData.db";
-                SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(database_path, null);
-                String song = (String) parent.getAdapter().getItem(position);
-                String song_cut = song.split(",")[0];
-                SQLiteCursor meta_c = (SQLiteCursor) database.rawQuery("SELECT * FROM songList " +
-                        "WHERE Ref=" + song_cut, null);
-
-                meta_c.moveToFirst();
-                int current_count = meta_c.getInt(meta_c.getColumnIndex("Count"));
-                CharSequence songId = meta_c.getString(meta_c.getColumnIndex("Ref"));
-                ContentValues tableVals = new ContentValues();
-                tableVals.put("Count", current_count + 1);
-
-                Log.d("ERROR", Integer.toString(current_count));
-                database.update("songList", tableVals, "Ref=" + song_cut, null);
-                meta_c.close();
-                database.close();
-
                 Intent i = new Intent(PopularActivity.this, OnlineMusicPlayerActivity.class);
-                i.putExtra(OnlineMusicPlayerActivity.PARSE_OBJECT_ID, songId);
+                i.putExtra(OnlineMusicPlayerActivity.PARSE_OBJECT_ID, adapter.getItem(position)
+                        .getObjectId());
                 startActivity(i);
             }
         });

@@ -10,6 +10,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.MediaController;
@@ -25,6 +26,7 @@ import com.parse.ParseQuery;
 public final class OnlineMusicPlayerActivity extends Activity implements MediaController
         .MediaPlayerControl, MediaPlayer.OnPreparedListener, SensorEventListener {
 
+    private static final String TAG = "OnlineMusicActivity";
     // TODO: This track id could be randomly generated.
     static final String PARSE_OBJECT_ID = "parse_object_id_key";
 
@@ -33,7 +35,7 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
     private ImageView albumCover;
     private TextView titleText;
     private TextView artistText;
-
+    private TextView voteText;
 
     //Sensor
     private double threshold;
@@ -70,6 +72,12 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         ParseQuery.getQuery(Song.class).getInBackground(parseObjectId, new GetCallback<Song>() {
             @Override
             public void done(Song object, ParseException e) {
+                ImageView soundCloudLogo = (ImageView) findViewById(R.id.sound_cloud_logo);
+                soundCloudLogo.setImageDrawable(getResources().getDrawable(R.drawable.soundcloud,
+                        null));
+                voteText.setText(object.getVotes());
+                titleText.setText(object.getSongName());
+                artistText.setText(object.getArtistName());
                 new DownloadMusicTask(mediaPlayer, albumCover, titleText, artistText,
                         OnlineMusicPlayerActivity.this).execute
                         ((String) object.get(Song.SOUND_CLOUD_ID_KEY));

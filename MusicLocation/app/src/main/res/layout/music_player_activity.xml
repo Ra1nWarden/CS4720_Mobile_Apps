@@ -40,7 +40,6 @@
         <TextView
             android:id="@+id/votes"
             android:layout_below="@id/song_artist"
-            android:layout_toRightOf="@id/sound_cloud_logo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -62,7 +61,6 @@
 
     <ImageView
         android:id="@+id/album_cover"
-        android:layout_below="@id/sound_cloud_logo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

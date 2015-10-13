@@ -32,6 +32,7 @@
 
     <TextView
         android:id="@+id/votes"
+        android:layout_below="@id/song_artist"
         android:layout_toRightOf="@id/sound_cloud_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

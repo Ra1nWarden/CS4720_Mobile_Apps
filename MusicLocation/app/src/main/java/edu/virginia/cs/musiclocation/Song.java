@@ -5,7 +5,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 
 @ParseClassName("Songs")
-public class Song extends ParseObject {
+public final class Song extends ParseObject {
 
     static final String SONG_TITLE_KEY = "songTitle";
     static final String PLAYS_KEY = "plays";
@@ -43,6 +43,16 @@ public class Song extends ParseObject {
 
     public void incrementPlay() {
         increment(PLAYS_KEY);
+        saveInBackground();
+    }
+
+    public void voteUp() {
+        increment(VOTES_KEY);
+        saveInBackground();
+    }
+
+    public void voteDown() {
+        increment(VOTES_KEY, -1);
         saveInBackground();
     }
 }

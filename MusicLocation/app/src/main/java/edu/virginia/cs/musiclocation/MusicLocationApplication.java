@@ -8,7 +8,7 @@ import com.parse.ParseObject;
 /**
  * An application class.
  */
-public class MusicLocationApplication extends Application {
+public final class MusicLocationApplication extends Application {
 
     @Override
     public void onCreate() {

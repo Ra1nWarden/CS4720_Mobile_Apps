@@ -4,8 +4,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteCursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -39,7 +37,7 @@ public final class MainActivity extends AppCompatActivity {
         onlineMusicPlayerButton = (Button) findViewById(R.id.onlineMusicPlayerLink);
         //staticMusicPlayerButton = (Button) findViewById(R.id.staticMusicPlayerLink);
 
-        SharedPreferences preferences = getSharedPreferences(StartActivity.class.getName(),
+        SharedPreferences preferences = getSharedPreferences(getApplication().getPackageName(),
                 MODE_PRIVATE);
         nameLabel.setText(preferences.getString(StartActivity.NAME_KEY, "") + "'s Music Player");
 

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class StartActivity extends AppCompatActivity {
+public final class StartActivity extends AppCompatActivity {
 
     static final String NAME_KEY = "name";
 
@@ -27,8 +27,8 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userName = editValue.getText().toString();
-                SharedPreferences preferences = getSharedPreferences(StartActivity.class.getName
-                        (), MODE_PRIVATE);
+                SharedPreferences preferences = getSharedPreferences(getApplication()
+                        .getPackageName(), MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit()
                         .putString(NAME_KEY, userName);
                 editor.commit();

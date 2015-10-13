@@ -3,6 +3,7 @@ package edu.virginia.cs.musiclocation;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
@@ -16,6 +17,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.MediaController;
@@ -51,7 +53,15 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
     private Sensor accel;
     private SensorManager sm;
 
+    private Button upButton;
+    private Button downButton;
+
     private String parseObjectId;
+
+    private SharedPreferences preferences;
+
+    public OnlineMusicPlayerActivity() {
+    }
 
     @Override
     public void onCreate(Bundle savedInstance) {
@@ -71,6 +81,14 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         voteText = (TextView) findViewById(R.id.votes);
         creditsButton = (ImageButton) findViewById(R.id.credits);
 
+        upButton = (Button) findViewById(R.id.up);
+        downButton = (Button) findViewById(R.id.down);
+
+        preferences = getSharedPreferences(getApplication().getPackageName(),
+                MODE_PRIVATE);
+        upButton.setClickable(!preferences.contains(parseObjectId));
+        downButton.setClickable(!preferences.contains(parseObjectId));
+
         AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume
                 (AudioManager.STREAM_MUSIC) / 3, 0);
@@ -81,7 +99,6 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
             @Override
             public void done(Song object, ParseException e) {
                 if (e == null) {
-                    ImageView soundCloudLogo = (ImageView) findViewById(R.id.credits);
                     voteText.setText(Integer.toString(object.getVotes()));
                     titleText.setText(object.getSongName());
                     artistText.setText(object.getArtistName());
@@ -234,6 +251,49 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
                 seekTo(getCurrentPosition() + 5000);
             }
         }
+    }
+
+    //Votes
+    public void upVote(View button) {
+        ParseQuery.getQuery(Song.class).getInBackground(parseObjectId, new GetCallback<Song>() {
+            @Override
+            public void done(Song object, ParseException e) {
+                if (e == null) {
+                    object.voteUp();
+                } else {
+                    if (Log.isLoggable(TAG, Log.ERROR)) {
+                        Log.e(TAG, "Error in getting object.", e);
+                    }
+                }
+            }
+        });
+        SharedPreferences.Editor editor = preferences.edit()
+                .putBoolean(parseObjectId, true);
+        editor.commit();
+        upButton.setClickable(false);
+        downButton.setClickable(false);
+        voteText.setText(Integer.toString(Integer.parseInt(voteText.getText().toString()) + 1));
+    }
+
+    public void downVote(View button) {
+        ParseQuery.getQuery(Song.class).getInBackground(parseObjectId, new GetCallback<Song>() {
+            @Override
+            public void done(Song object, ParseException e) {
+                if (e == null) {
+                    object.voteDown();
+                } else {
+                    if (Log.isLoggable(TAG, Log.ERROR)) {
+                        Log.e(TAG, "Error in getting object.", e);
+                    }
+                }
+            }
+        });
+        SharedPreferences.Editor editor = preferences.edit()
+                .putBoolean(parseObjectId, false);
+        editor.commit();
+        upButton.setClickable(false);
+        downButton.setClickable(false);
+        voteText.setText(Integer.toString(Integer.parseInt(voteText.getText().toString()) - 1));
     }
 }
 

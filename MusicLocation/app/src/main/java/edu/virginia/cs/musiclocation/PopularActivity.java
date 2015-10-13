@@ -25,21 +25,23 @@ public final class PopularActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        ParseQuery.getQuery(Song.class).findInBackground(new FindCallback<Song>() {
-            @Override
-            public void done(List<Song> objects, ParseException e) {
-                if (e == null) {
-                    for (Song each : objects) {
-                        adapter.add(each);
-                    }
-                    adapter.notifyDataSetChanged();
-                } else {
-                    if (Log.isLoggable(TAG, Log.ERROR)) {
-                        Log.e(TAG, "Query parse database error. ", e);
+        if (adapter.isEmpty()) {
+            ParseQuery.getQuery(Song.class).findInBackground(new FindCallback<Song>() {
+                @Override
+                public void done(List<Song> objects, ParseException e) {
+                    if (e == null) {
+                        for (Song each : objects) {
+                            adapter.add(each);
+                        }
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        if (Log.isLoggable(TAG, Log.ERROR)) {
+                            Log.e(TAG, "Query parse database error. ", e);
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
     }
 
     @Override

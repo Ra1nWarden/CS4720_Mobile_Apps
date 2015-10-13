@@ -2,6 +2,7 @@ package edu.virginia.cs.musiclocation;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
@@ -14,6 +15,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -37,6 +40,7 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
     private MediaPlayer mediaPlayer;
     private MediaController mediaController;
     private ImageView albumCover;
+    private Button creditsButton;
     private TextView titleText;
     private TextView artistText;
     private TextView voteText;
@@ -65,6 +69,7 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         titleText = (TextView) findViewById(R.id.song_title);
         artistText = (TextView) findViewById(R.id.song_artist);
         voteText = (TextView) findViewById(R.id.votes);
+        creditsButton=(Button) findViewById(R.id.credits);
 
         AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume
@@ -101,6 +106,14 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
             }
         });
 
+        creditsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(.this, OnlineMusicPlayerActivity.class);
+                i.putExtra(OnlineMusicPlayerActivity.PARSE_OBJECT_ID, "AXpBEFQ397");
+                startActivity(i);
+            }
+        });
     }
 
     @Override

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/main_audio_view"
               android:orientation="vertical"
               android:layout_width="match_parent"
@@ -24,18 +24,41 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.01" />
 
-    <ImageView
-        android:layout_below="@id/song_artist"
-        android:id="@+id/sound_cloud_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.01">
 
-    <TextView
-        android:id="@+id/votes"
-        android:layout_below="@id/song_artist"
-        android:layout_toRightOf="@id/sound_cloud_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/credits"
+            android:background="@drawable/credits" />
+
+        <TextView
+            android:id="@+id/votes"
+            android:layout_below="@id/song_artist"
+            android:layout_toRightOf="@id/sound_cloud_logo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight=".5" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Up"
+            android:id="@+id/up" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Down"
+            android:id="@+id/down" />
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/album_cover"
@@ -57,4 +80,4 @@
         android:text="Shake Tablet to Seek Ahead"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
-</RelativeLayout>
+</LinearLayout>

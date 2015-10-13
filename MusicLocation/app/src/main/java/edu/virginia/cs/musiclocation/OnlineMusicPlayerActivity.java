@@ -12,6 +12,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -99,6 +100,7 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
             @Override
             public void done(Song object, ParseException e) {
                 if (e == null) {
+                    ImageView soundCloudLogo = (ImageView) findViewById(R.id.credits);
                     voteText.setText(Integer.toString(object.getVotes()));
                     titleText.setText(object.getSongName());
                     artistText.setText(object.getArtistName());
@@ -123,9 +125,7 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         creditsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(OnlineMusicPlayerActivity.this, OnlineMusicPlayerActivity
-                        .class);
-                i.putExtra(OnlineMusicPlayerActivity.PARSE_OBJECT_ID, "AXpBEFQ397");
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://soundcloud.com/"));
                 startActivity(i);
             }
         });

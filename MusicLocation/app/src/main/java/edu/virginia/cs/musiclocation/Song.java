@@ -5,7 +5,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 
 @ParseClassName("Songs")
-public class Song extends ParseObject {
+public final class Song extends ParseObject {
 
     static final String SONG_TITLE_KEY = "songTitle";
     static final String PLAYS_KEY = "plays";
@@ -13,6 +13,8 @@ public class Song extends ParseObject {
     static final String SOUND_CLOUD_ID_KEY = "soundCloudId";
     static final String ARTIST_NAME_KEY = "artistName";
     static final String COVER_KEY = "coverPicture";
+    static final String LATITUDE_KEY = "latitude";
+    static final String LONGITUDE_KEY = "longitude";
 
     public Song() {
     }
@@ -44,5 +46,23 @@ public class Song extends ParseObject {
     public void incrementPlay() {
         increment(PLAYS_KEY);
         saveInBackground();
+    }
+
+    public void voteUp() {
+        increment(VOTES_KEY);
+        saveInBackground();
+    }
+
+    public void voteDown() {
+        increment(VOTES_KEY, -1);
+        saveInBackground();
+    }
+
+    public double getLatitude() {
+        return getDouble(LATITUDE_KEY);
+    }
+
+    public double getLongitude() {
+        return getDouble(LONGITUDE_KEY);
     }
 }

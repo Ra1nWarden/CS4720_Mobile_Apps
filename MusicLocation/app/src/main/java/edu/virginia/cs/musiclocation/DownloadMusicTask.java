@@ -1,16 +1,10 @@
 package edu.virginia.cs.musiclocation;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import org.json.JSONObject;
 

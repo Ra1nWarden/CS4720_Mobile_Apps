@@ -8,17 +8,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class StartActivity extends AppCompatActivity {
+public final class StartActivity extends AppCompatActivity {
 
     static final String NAME_KEY = "name";
 
     private Button submitButton;
     private EditText editValue;
 
+    private SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        preferences = getSharedPreferences(getApplication()
+                .getPackageName(), MODE_PRIVATE);
+        if (preferences.contains(NAME_KEY)) {
+            Intent i = new Intent(StartActivity.this, MainActivity.class);
+            startActivity(i);
+        }
 
         submitButton = (Button) findViewById(R.id.returnInput);
         editValue = (EditText) findViewById(R.id.editText);
@@ -27,8 +35,6 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userName = editValue.getText().toString();
-                SharedPreferences preferences = getSharedPreferences(StartActivity.class.getName
-                        (), MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit()
                         .putString(NAME_KEY, userName);
                 editor.commit();

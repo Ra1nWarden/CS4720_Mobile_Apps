@@ -4,8 +4,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteCursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -26,6 +24,9 @@ public final class MainActivity extends AppCompatActivity {
     private TextView nameLabel;
     private Button localButton;
     private Button onlineMusicPlayerButton;
+
+    private double latitude;
+    private double longitude;
     //private Button staticMusicPlayerButton;
 
     @Override
@@ -39,14 +40,18 @@ public final class MainActivity extends AppCompatActivity {
         onlineMusicPlayerButton = (Button) findViewById(R.id.onlineMusicPlayerLink);
         //staticMusicPlayerButton = (Button) findViewById(R.id.staticMusicPlayerLink);
 
-        SharedPreferences preferences = getSharedPreferences(StartActivity.class.getName(),
+        SharedPreferences preferences = getSharedPreferences(getApplication().getPackageName(),
                 MODE_PRIVATE);
         nameLabel.setText(preferences.getString(StartActivity.NAME_KEY, "") + "'s Music Player");
+
+        setUpLocationManager();
 
         localButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, PopularActivity.class);
+                i.putExtra(PopularActivity.LATITUDE_KEY, latitude);
+                i.putExtra(PopularActivity.LONGITUDE_KEY, longitude);
                 startActivity(i);
             }
         });
@@ -55,12 +60,9 @@ public final class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, OnlineMusicPlayerActivity.class);
-                i.putExtra(OnlineMusicPlayerActivity.PARSE_OBJECT_ID, "AXpBEFQ397");
                 startActivity(i);
             }
         });
-
-        setUpLocationManager();
     }
 
     private void setUpLocationManager() {
@@ -69,6 +71,8 @@ public final class MainActivity extends AppCompatActivity {
         LocationListener locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
+                latitude = location.getLatitude();
+                longitude = location.getLongitude();
                 locationLabel.setText("Lat: " + Double.toString(location.getLatitude()) + ",\n"
                         + "Long: " + Double.toString(location.getLongitude()));
             }

@@ -1,34 +1,26 @@
 package edu.virginia.cs.musiclocation;
 
-import android.app.ListActivity;
-import android.content.ContentValues;
+import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteCursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v4.widget.CursorAdapter;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 
-import com.parse.CountCallback;
 import com.parse.FindCallback;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public final class PopularActivity extends ListActivity {
+public final class PopularActivity extends Activity {
 
     private static final String TAG = "PopularActivity";
 
     private SongAdapter adapter;
+    private ListView listView;
 
     @Override
     protected void onResume() {
@@ -54,10 +46,14 @@ public final class PopularActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popular_activity);
+        listView = (ListView) findViewById(R.id.list);
+        LinearLayout titleView = (LinearLayout) getLayoutInflater().inflate(R.layout
+                .list_title_view, null);
+        listView.addHeaderView(titleView);
         adapter = new SongAdapter(this, R.layout.song_layout);
-        setListAdapter(adapter);
+        listView.setAdapter(adapter);
 
-        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Song song = adapter.getItem(position);

@@ -9,7 +9,7 @@
                 tools:context="edu.virginia.cs.musiclocation.PopularActivity">
 
     <ListView
-        android:id="@android:id/list"
+        android:id="@+id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"

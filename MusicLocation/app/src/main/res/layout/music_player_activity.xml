@@ -28,7 +28,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_weight="0.01"
         android:orientation="horizontal">
 
@@ -40,12 +39,15 @@
 
         <TextView
             android:id="@+id/votes"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/song_artist"
-            android:layout_gravity="right"
             android:layout_toRightOf="@id/credits"
-            android:layout_weight=".5"/>
+            android:layout_weight=".5"
+            android:text="0"
+            android:layout_gravity="center_vertical|right"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:gravity="right" />
 
         <Button
             android:id="@+id/up"

@@ -36,8 +36,5 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         return output;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 }

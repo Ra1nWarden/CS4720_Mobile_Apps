@@ -100,7 +100,6 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
             @Override
             public void done(Song object, ParseException e) {
                 if (e == null) {
-                    ImageView soundCloudLogo = (ImageView) findViewById(R.id.credits);
                     voteText.setText(Integer.toString(object.getVotes()));
                     titleText.setText(object.getSongName());
                     artistText.setText(object.getArtistName());

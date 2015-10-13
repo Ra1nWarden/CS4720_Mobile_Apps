@@ -15,10 +15,18 @@ public final class StartActivity extends AppCompatActivity {
     private Button submitButton;
     private EditText editValue;
 
+    private SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        preferences = getSharedPreferences(getApplication()
+                .getPackageName(), MODE_PRIVATE);
+        if (preferences.contains(NAME_KEY)) {
+            Intent i = new Intent(StartActivity.this, MainActivity.class);
+            startActivity(i);
+        }
 
         submitButton = (Button) findViewById(R.id.returnInput);
         editValue = (EditText) findViewById(R.id.editText);
@@ -27,8 +35,6 @@ public final class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userName = editValue.getText().toString();
-                SharedPreferences preferences = getSharedPreferences(getApplication()
-                        .getPackageName(), MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit()
                         .putString(NAME_KEY, userName);
                 editor.commit();

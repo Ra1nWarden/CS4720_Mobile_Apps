@@ -2,12 +2,15 @@ package edu.virginia.cs.musiclocation;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -17,8 +20,13 @@ import android.widget.MediaController;
 import android.widget.TextView;
 
 import com.parse.GetCallback;
+import com.parse.GetDataCallback;
+import com.parse.GetDataStreamCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseQuery;
+
+import java.io.InputStream;
 
 /**
  * A music player that plays music from soundcloud.
@@ -60,27 +68,40 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         albumCover = (ImageView) findViewById(R.id.album_cover);
         titleText = (TextView) findViewById(R.id.song_title);
         artistText = (TextView) findViewById(R.id.song_artist);
+        voteText = (TextView) findViewById(R.id.votes);
 
         AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume
                 (AudioManager.STREAM_MUSIC) / 3, 0);
         sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         accel = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-
-
         parseObjectId = getIntent().getStringExtra(PARSE_OBJECT_ID);
         ParseQuery.getQuery(Song.class).getInBackground(parseObjectId, new GetCallback<Song>() {
             @Override
             public void done(Song object, ParseException e) {
-                ImageView soundCloudLogo = (ImageView) findViewById(R.id.sound_cloud_logo);
-                soundCloudLogo.setImageDrawable(getResources().getDrawable(R.drawable.soundcloud,
-                        null));
-                voteText.setText(object.getVotes());
-                titleText.setText(object.getSongName());
-                artistText.setText(object.getArtistName());
-                new DownloadMusicTask(mediaPlayer, albumCover, titleText, artistText,
-                        OnlineMusicPlayerActivity.this).execute
-                        ((String) object.get(Song.SOUND_CLOUD_ID_KEY));
+                if (e == null) {
+                    ImageView soundCloudLogo = (ImageView) findViewById(R.id.sound_cloud_logo);
+                    soundCloudLogo.setImageDrawable(getResources().getDrawable(R.drawable
+                                    .soundcloud,
+                            null));
+                    voteText.setText(Integer.toString(object.getVotes()));
+                    titleText.setText(object.getSongName());
+                    artistText.setText(object.getArtistName());
+                    new DownloadMusicTask(mediaPlayer, OnlineMusicPlayerActivity.this).execute
+                            ((String) object.get(Song.SOUND_CLOUD_ID_KEY));
+                    ParseFile coverFile = object.getCoverFile();
+                    coverFile.getDataInBackground(new GetDataCallback() {
+                        @Override
+                        public void done(byte[] data, ParseException e) {
+                            Bitmap bm = BitmapFactory.decodeByteArray(data, 0, data.length);
+                            albumCover.setImageBitmap(bm);
+                        }
+                    });
+                } else {
+                    if (Log.isLoggable(TAG, Log.ERROR)) {
+                        Log.e(TAG, "Error in retrieving object!", e);
+                    }
+                }
             }
         });
 

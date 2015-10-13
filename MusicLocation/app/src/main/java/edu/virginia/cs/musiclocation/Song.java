@@ -1,6 +1,7 @@
 package edu.virginia.cs.musiclocation;
 
 import com.parse.ParseClassName;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 
 @ParseClassName("Songs")
@@ -11,6 +12,7 @@ public class Song extends ParseObject {
     static final String VOTES_KEY = "votes";
     static final String SOUND_CLOUD_ID_KEY = "soundCloudId";
     static final String ARTIST_NAME_KEY = "artistName";
+    static final String COVER_KEY = "coverPicture";
 
     public Song() {
     }
@@ -33,5 +35,9 @@ public class Song extends ParseObject {
 
     public String getArtistName() {
         return (String) get(ARTIST_NAME_KEY);
+    }
+
+    public ParseFile getCoverFile() {
+        return (ParseFile) get(COVER_KEY);
     }
 }

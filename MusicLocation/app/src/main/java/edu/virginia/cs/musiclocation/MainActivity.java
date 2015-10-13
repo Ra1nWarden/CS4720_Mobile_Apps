@@ -27,7 +27,6 @@ public final class MainActivity extends AppCompatActivity {
 
     private double latitude;
     private double longitude;
-    //private Button staticMusicPlayerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,6 @@ public final class MainActivity extends AppCompatActivity {
         locationLabel = (TextView) findViewById(R.id.loc);
         localButton = (Button) findViewById(R.id.popularLink);
         onlineMusicPlayerButton = (Button) findViewById(R.id.onlineMusicPlayerLink);
-        //staticMusicPlayerButton = (Button) findViewById(R.id.staticMusicPlayerLink);
 
         SharedPreferences preferences = getSharedPreferences(getApplication().getPackageName(),
                 MODE_PRIVATE);

@@ -10,6 +10,7 @@ public class Song extends ParseObject {
     static final String PLAYS_KEY = "plays";
     static final String VOTES_KEY = "votes";
     static final String SOUND_CLOUD_ID_KEY = "soundCloudId";
+    static final String ARTIST_NAME_KEY = "artistName";
 
     public Song() {
     }
@@ -28,5 +29,9 @@ public class Song extends ParseObject {
 
     public int getId() {
         return (int) get(SOUND_CLOUD_ID_KEY);
+    }
+
+    public String getArtistName() {
+        return (String) get(ARTIST_NAME_KEY);
     }
 }

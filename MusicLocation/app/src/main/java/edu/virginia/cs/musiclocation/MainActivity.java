@@ -3,6 +3,7 @@ package edu.virginia.cs.musiclocation;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
@@ -25,8 +26,6 @@ public final class MainActivity extends AppCompatActivity {
     private TextView nameLabel;
     private Button localButton;
     private Button onlineMusicPlayerButton;
-    private SQLiteDatabase database;
-    private String database_path;
     //private Button staticMusicPlayerButton;
 
     @Override
@@ -40,18 +39,9 @@ public final class MainActivity extends AppCompatActivity {
         onlineMusicPlayerButton = (Button) findViewById(R.id.onlineMusicPlayerLink);
         //staticMusicPlayerButton = (Button) findViewById(R.id.staticMusicPlayerLink);
 
-        //Initialize Database
-        database_path = getApplicationInfo().dataDir + "/musicData.db";
-        database = SQLiteDatabase.openOrCreateDatabase(database_path, null);
-
-        //Fill out name
-        SQLiteCursor meta_c = (SQLiteCursor) database.rawQuery("SELECT * FROM meta", null);
-        if (meta_c.getCount() > 0) {
-            meta_c.moveToFirst();
-            nameLabel.setText(meta_c.getString(meta_c.getColumnIndex("Name")) + "'s Music Player");
-        } else {
-            database.execSQL("INSERT INTO meta VALUES (\"\")");
-        }
+        SharedPreferences preferences = getSharedPreferences(StartActivity.class.getName(),
+                MODE_PRIVATE);
+        nameLabel.setText(preferences.getString(StartActivity.NAME_KEY, "") + "'s Music Player");
 
         localButton.setOnClickListener(new View.OnClickListener() {
             @Override

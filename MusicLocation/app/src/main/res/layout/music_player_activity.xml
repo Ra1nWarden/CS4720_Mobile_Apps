@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/main_audio_view"
               android:orientation="vertical"
               android:layout_width="match_parent"
@@ -17,6 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/song_title"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Loading Artist"
         android:id="@+id/song_artist"
@@ -24,7 +25,19 @@
         android:layout_weight="0.01" />
 
     <ImageView
+        android:layout_below="@id/song_artist"
+        android:id="@+id/sound_cloud_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_toRightOf="@id/sound_cloud_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
         android:id="@+id/album_cover"
+        android:layout_below="@id/sound_cloud_logo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -38,7 +51,8 @@
         android:id="@+id/placeholder"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.03"
+        android:layout_below="@id/album_cover"
         android:text="Shake Tablet to Seek Ahead"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
-</LinearLayout>
+</RelativeLayout>

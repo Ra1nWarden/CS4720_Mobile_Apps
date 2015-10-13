@@ -60,7 +60,6 @@ public final class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, OnlineMusicPlayerActivity.class);
-                i.putExtra(OnlineMusicPlayerActivity.PARSE_OBJECT_ID, "AXpBEFQ397");
                 startActivity(i);
             }
         });

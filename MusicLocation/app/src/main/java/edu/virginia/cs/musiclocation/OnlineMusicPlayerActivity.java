@@ -24,11 +24,15 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.GetDataCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseQuery;
+
+import java.util.List;
+import java.util.Random;
 
 /**
  * A music player that plays music from soundcloud.
@@ -96,30 +100,60 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         accel = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         parseObjectId = getIntent().getStringExtra(PARSE_OBJECT_ID);
-        ParseQuery.getQuery(Song.class).getInBackground(parseObjectId, new GetCallback<Song>() {
-            @Override
-            public void done(Song object, ParseException e) {
-                if (e == null) {
-                    voteText.setText(Integer.toString(object.getVotes()));
-                    titleText.setText(object.getSongName());
-                    artistText.setText(object.getArtistName());
-                    new DownloadMusicTask(mediaPlayer, OnlineMusicPlayerActivity.this).execute
-                            ((String) object.get(Song.SOUND_CLOUD_ID_KEY));
-                    ParseFile coverFile = object.getCoverFile();
-                    coverFile.getDataInBackground(new GetDataCallback() {
-                        @Override
-                        public void done(byte[] data, ParseException e) {
-                            Bitmap bm = BitmapFactory.decodeByteArray(data, 0, data.length);
-                            albumCover.setImageBitmap(bm);
+        if (parseObjectId == null) {
+            // Random pick
+            ParseQuery.getQuery(Song.class).findInBackground(new FindCallback<Song>() {
+                @Override
+                public void done(List<Song> objects, ParseException e) {
+                    if (e == null) {
+                        Random r = new Random();
+                        Song object = objects.get(r.nextInt(objects.size()));
+                        voteText.setText(Integer.toString(object.getVotes()));
+                        titleText.setText(object.getSongName());
+                        artistText.setText(object.getArtistName());
+                        new DownloadMusicTask(mediaPlayer, OnlineMusicPlayerActivity.this).execute
+                                ((String) object.get(Song.SOUND_CLOUD_ID_KEY));
+                        ParseFile coverFile = object.getCoverFile();
+                        coverFile.getDataInBackground(new GetDataCallback() {
+                            @Override
+                            public void done(byte[] data, ParseException e) {
+                                Bitmap bm = BitmapFactory.decodeByteArray(data, 0, data.length);
+                                albumCover.setImageBitmap(bm);
+                            }
+                        });
+                    } else {
+                        if (Log.isLoggable(TAG, Log.ERROR)) {
+                            Log.e(TAG, "Error in retrieving object!", e);
                         }
-                    });
-                } else {
-                    if (Log.isLoggable(TAG, Log.ERROR)) {
-                        Log.e(TAG, "Error in retrieving object!", e);
                     }
                 }
-            }
-        });
+            });
+        } else {
+            ParseQuery.getQuery(Song.class).getInBackground(parseObjectId, new GetCallback<Song>() {
+                @Override
+                public void done(Song object, ParseException e) {
+                    if (e == null) {
+                        voteText.setText(Integer.toString(object.getVotes()));
+                        titleText.setText(object.getSongName());
+                        artistText.setText(object.getArtistName());
+                        new DownloadMusicTask(mediaPlayer, OnlineMusicPlayerActivity.this).execute
+                                ((String) object.get(Song.SOUND_CLOUD_ID_KEY));
+                        ParseFile coverFile = object.getCoverFile();
+                        coverFile.getDataInBackground(new GetDataCallback() {
+                            @Override
+                            public void done(byte[] data, ParseException e) {
+                                Bitmap bm = BitmapFactory.decodeByteArray(data, 0, data.length);
+                                albumCover.setImageBitmap(bm);
+                            }
+                        });
+                    } else {
+                        if (Log.isLoggable(TAG, Log.ERROR)) {
+                            Log.e(TAG, "Error in retrieving object!", e);
+                        }
+                    }
+                }
+            });
+        }
 
         creditsButton.setOnClickListener(new View.OnClickListener() {
             @Override

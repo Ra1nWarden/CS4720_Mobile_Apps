@@ -34,28 +34,28 @@ public final class PopularActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (adapter.isEmpty()) {
-            ParseQuery.getQuery(Song.class).findInBackground(new FindCallback<Song>() {
-                @Override
-                public void done(List<Song> objects, ParseException e) {
-                    if (e == null) {
-                        for (Song each : objects) {
-                            double lat = each.getLatitude();
-                            double lon = each.getLongitude();
-                            double diff = dist(lat, latitude, lon, longitude);
-                            if (diff < THRESHOLD) {
-                                adapter.add(each);
-                            }
-                        }
-                        adapter.notifyDataSetChanged();
-                    } else {
-                        if (Log.isLoggable(TAG, Log.ERROR)) {
-                            Log.e(TAG, "Query parse database error. ", e);
+        adapter.clear();
+        ParseQuery.getQuery(Song.class).findInBackground(new FindCallback<Song>() {
+            @Override
+            public void done(List<Song> objects, ParseException e) {
+                if (e == null) {
+                    for (Song each : objects) {
+                        double lat = each.getLatitude();
+                        double lon = each.getLongitude();
+                        double diff = dist(lat, latitude, lon, longitude);
+                        if (diff < THRESHOLD) {
+                            adapter.add(each);
                         }
                     }
+                    adapter.notifyDataSetChanged();
+                } else {
+                    if (Log.isLoggable(TAG, Log.ERROR)) {
+                        Log.e(TAG, "Query parse database error. ", e);
+                    }
                 }
-            });
-        }
+            }
+        });
+
     }
 
     @Override

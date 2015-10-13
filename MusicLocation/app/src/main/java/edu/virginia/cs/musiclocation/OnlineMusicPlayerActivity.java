@@ -73,7 +73,7 @@ public final class OnlineMusicPlayerActivity extends Activity implements MediaCo
         super.onCreate(savedInstance);
         setContentView(R.layout.music_player_activity);
 
-        threshold = 15.0;
+        threshold = 14.0;
 
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setVolume(.5f, .5f);

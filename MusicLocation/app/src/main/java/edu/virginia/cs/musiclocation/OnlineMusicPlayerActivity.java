@@ -10,7 +10,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -21,12 +20,9 @@ import android.widget.TextView;
 
 import com.parse.GetCallback;
 import com.parse.GetDataCallback;
-import com.parse.GetDataStreamCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseQuery;
-
-import java.io.InputStream;
 
 /**
  * A music player that plays music from soundcloud.

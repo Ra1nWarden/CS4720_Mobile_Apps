@@ -40,4 +40,9 @@ public class Song extends ParseObject {
     public ParseFile getCoverFile() {
         return (ParseFile) get(COVER_KEY);
     }
+
+    public void incrementPlay() {
+        increment(PLAYS_KEY);
+        saveInBackground();
+    }
 }

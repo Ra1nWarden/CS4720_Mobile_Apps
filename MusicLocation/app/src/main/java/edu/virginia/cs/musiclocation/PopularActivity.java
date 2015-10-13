@@ -60,6 +60,8 @@ public final class PopularActivity extends ListActivity {
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Song song = adapter.getItem(position);
+                song.incrementPlay();
                 Intent i = new Intent(PopularActivity.this, OnlineMusicPlayerActivity.class);
                 i.putExtra(OnlineMusicPlayerActivity.PARSE_OBJECT_ID, adapter.getItem(position)
                         .getObjectId());

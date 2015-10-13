@@ -24,6 +24,9 @@ public final class MainActivity extends AppCompatActivity {
     private TextView nameLabel;
     private Button localButton;
     private Button onlineMusicPlayerButton;
+
+    private double latitude;
+    private double longitude;
     //private Button staticMusicPlayerButton;
 
     @Override
@@ -41,10 +44,14 @@ public final class MainActivity extends AppCompatActivity {
                 MODE_PRIVATE);
         nameLabel.setText(preferences.getString(StartActivity.NAME_KEY, "") + "'s Music Player");
 
+        setUpLocationManager();
+
         localButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, PopularActivity.class);
+                i.putExtra(PopularActivity.LATITUDE_KEY, latitude);
+                i.putExtra(PopularActivity.LONGITUDE_KEY, longitude);
                 startActivity(i);
             }
         });
@@ -57,8 +64,6 @@ public final class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-        setUpLocationManager();
     }
 
     private void setUpLocationManager() {
@@ -67,6 +72,8 @@ public final class MainActivity extends AppCompatActivity {
         LocationListener locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
+                latitude = location.getLatitude();
+                longitude = location.getLongitude();
                 locationLabel.setText("Lat: " + Double.toString(location.getLatitude()) + ",\n"
                         + "Long: " + Double.toString(location.getLongitude()));
             }

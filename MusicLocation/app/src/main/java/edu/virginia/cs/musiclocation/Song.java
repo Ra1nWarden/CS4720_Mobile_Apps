@@ -13,6 +13,8 @@ public final class Song extends ParseObject {
     static final String SOUND_CLOUD_ID_KEY = "soundCloudId";
     static final String ARTIST_NAME_KEY = "artistName";
     static final String COVER_KEY = "coverPicture";
+    static final String LATITUDE_KEY = "latitude";
+    static final String LONGITUDE_KEY = "longitude";
 
     public Song() {
     }
@@ -54,5 +56,13 @@ public final class Song extends ParseObject {
     public void voteDown() {
         increment(VOTES_KEY, -1);
         saveInBackground();
+    }
+
+    public double getLatitude() {
+        return getDouble(LATITUDE_KEY);
+    }
+
+    public double getLongitude() {
+        return getDouble(LONGITUDE_KEY);
     }
 }

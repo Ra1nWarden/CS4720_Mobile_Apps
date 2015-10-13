@@ -17,10 +17,19 @@ import java.util.List;
 
 public final class PopularActivity extends Activity {
 
+    private static final double THRESHOLD = 1.0;
     private static final String TAG = "PopularActivity";
+    static final String LATITUDE_KEY = "latitude";
+    static final String LONGITUDE_KEY = "longitude";
 
     private SongAdapter adapter;
     private ListView listView;
+    private double latitude;
+    private double longitude;
+
+    private static double dist(double lat1, double lat2, double lon1, double lon2) {
+        return Math.pow(lat1 - lat2, 2) + Math.pow(lon1 - lon2, 2);
+    }
 
     @Override
     protected void onResume() {
@@ -31,7 +40,12 @@ public final class PopularActivity extends Activity {
                 public void done(List<Song> objects, ParseException e) {
                     if (e == null) {
                         for (Song each : objects) {
-                            adapter.add(each);
+                            double lat = each.getLatitude();
+                            double lon = each.getLongitude();
+                            double diff = dist(lat, latitude, lon, longitude);
+                            if (diff < THRESHOLD) {
+                                adapter.add(each);
+                            }
                         }
                         adapter.notifyDataSetChanged();
                     } else {
@@ -66,6 +80,9 @@ public final class PopularActivity extends Activity {
                 startActivity(i);
             }
         });
+
+        latitude = getIntent().getDoubleExtra(LATITUDE_KEY, -1);
+        longitude = getIntent().getDoubleExtra(LONGITUDE_KEY, -1);
     }
 
 }

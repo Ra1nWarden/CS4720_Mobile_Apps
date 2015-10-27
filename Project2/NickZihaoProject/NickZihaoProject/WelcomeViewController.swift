@@ -7,23 +7,39 @@
 //
 
 import UIKit
-
+import CoreLocation
 import Parse
 
-class WelcomeViewController: UIViewController, UITextFieldDelegate {
+class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var latText: UILabel!
     
+    var lm: CLLocationManager!;
     
     override func viewDidLoad() {
         super.viewDidLoad();
         userNameField.delegate=self;
         passwordField.delegate=self;
         
+        lm=CLLocationManager();
+        lm.delegate=self;
+        lm.requestAlwaysAuthorization();
+        lm.desiredAccuracy=kCLLocationAccuracyBest;
+        lm.startUpdatingLocation();
+        
+        if (CLLocationManager.locationServicesEnabled()) {
+            latText.text="true";
+        }
+        else {
+            latText.text="false";
+        }
+        
         let data = PFObject(className: "Users");
         data["userName"]="It worked";
         data.saveInBackground();
+        
         
         // Do any additional setup after loading the view.
     }
@@ -44,5 +60,9 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         return true;
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        latText.text=String(locations[locations.count-1].coordinate.latitude);
     }
 }

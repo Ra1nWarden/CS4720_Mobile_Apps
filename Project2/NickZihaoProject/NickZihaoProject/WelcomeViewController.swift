@@ -8,14 +8,16 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        super.viewDidLoad();
+        userNameField.delegate=self;
+        passwordField.delegate=self;
         // Do any additional setup after loading the view.
     }
 
@@ -32,4 +34,8 @@ class WelcomeViewController: UIViewController {
     }
 
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return true;
+    }
 }

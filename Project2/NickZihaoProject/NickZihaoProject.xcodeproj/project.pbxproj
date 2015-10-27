@@ -12,8 +12,8 @@
 		19CE75E41BD73454008698AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CE75E21BD73454008698AE /* Main.storyboard */; };
 		19CE75E61BD73454008698AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19CE75E51BD73454008698AE /* Assets.xcassets */; };
 		19CE75E91BD73454008698AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CE75E71BD73454008698AE /* LaunchScreen.storyboard */; };
-		A61181B31BD84ABA005C10F0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61181B21BD84ABA005C10F0 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A61181B51BD84BE5005C10F0 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61181B41BD84BE5005C10F0 /* UserInfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A61181B31BD84ABA005C10F0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61181B21BD84ABA005C10F0 /* WelcomeViewController.swift */; };
+		A61181B51BD84BE5005C10F0 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61181B41BD84BE5005C10F0 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,7 +101,7 @@
 				TargetAttributes = {
 					19CE75DA1BD73453008698AE = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = ASEVUMECUS;
+						DevelopmentTeam = 856TQUMVYK;
 					};
 				};
 			};

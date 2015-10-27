@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Parse
+
 class WelcomeViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userNameField: UITextField!
@@ -18,6 +20,11 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad();
         userNameField.delegate=self;
         passwordField.delegate=self;
+        
+        let data = PFObject(className: "Users");
+        data["userName"]="It worked";
+        data.saveInBackground();
+        
         // Do any additional setup after loading the view.
     }
 

@@ -14,6 +14,7 @@ class UserInfoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var userName : String = ""
     
+    @IBOutlet weak var image: UIImageView!
     @IBAction func takePhoto(sender: AnyObject) {
         let controller : UIImagePickerController = UIImagePickerController()
         controller.sourceType = UIImagePickerControllerSourceType.Camera
@@ -21,10 +22,25 @@ class UserInfoViewController: UIViewController, UIImagePickerControllerDelegate,
         self.presentViewController(controller, animated: true, completion: nil)
     }
 
+    @IBAction func share(sender: UIBarButtonItem) {
+        let message=image.image;
+        let controller=UIActivityViewController(activityItems: [message!], applicationActivities: nil);
+        presentViewController(controller, animated: true, completion: nil);
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil);
+        if info[UIImagePickerControllerOriginalImage] is UIImage {
+            image.image=info[UIImagePickerControllerOriginalImage] as! UIImage;
+            image.contentMode=UIViewContentMode.ScaleAspectFill;
+        }
+    }
+    
     override func viewDidLoad() {
     
         super.viewDidLoad()
         messageLabel.text = userName
+
         // Do any additional setup after loading the view.
     }
 

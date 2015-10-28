@@ -20,6 +20,9 @@
 		19418EF01BDF17D100C0F8BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19418EEF1BDF17D100C0F8BF /* SystemConfiguration.framework */; };
 		19418EF21BDF17E800C0F8BF /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19418EF11BDF17E800C0F8BF /* libsqlite3.0.tbd */; };
 		19418EF41BDF17F200C0F8BF /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19418EF31BDF17F200C0F8BF /* libz.1.1.3.tbd */; };
+		19484FD01BE0D52800AB6870 /* NickZihaoProject.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 19484FCF1BE0D52800AB6870 /* NickZihaoProject.xcdatamodel */; };
+		19484FD21BE0DC6900AB6870 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19484FD11BE0DC6900AB6870 /* MapViewController.swift */; };
+		19484FD41BE0DD0500AB6870 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19484FD31BE0DD0500AB6870 /* MapKit.framework */; };
 		19CE75DF1BD73454008698AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CE75DE1BD73454008698AE /* AppDelegate.swift */; };
 		19CE75E11BD73454008698AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CE75E01BD73454008698AE /* ViewController.swift */; };
 		19CE75E41BD73454008698AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CE75E21BD73454008698AE /* Main.storyboard */; };
@@ -44,6 +47,9 @@
 		19418EEF1BDF17D100C0F8BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		19418EF11BDF17E800C0F8BF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		19418EF31BDF17F200C0F8BF /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		19484FCF1BE0D52800AB6870 /* NickZihaoProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NickZihaoProject.xcdatamodel; sourceTree = "<group>"; };
+		19484FD11BE0DC6900AB6870 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		19484FD31BE0DD0500AB6870 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		19CE75DB1BD73453008698AE /* NickZihaoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NickZihaoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19CE75DE1BD73454008698AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19CE75E01BD73454008698AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19484FD41BE0DD0500AB6870 /* MapKit.framework in Frameworks */,
 				19418EF41BDF17F200C0F8BF /* libz.1.1.3.tbd in Frameworks */,
 				19418EF21BDF17E800C0F8BF /* libsqlite3.0.tbd in Frameworks */,
 				19418EF01BDF17D100C0F8BF /* SystemConfiguration.framework in Frameworks */,
@@ -82,6 +89,7 @@
 		19CE75D21BD73453008698AE = {
 			isa = PBXGroup;
 			children = (
+				19484FD31BE0DD0500AB6870 /* MapKit.framework */,
 				19418EF31BDF17F200C0F8BF /* libz.1.1.3.tbd */,
 				19418EF11BDF17E800C0F8BF /* libsqlite3.0.tbd */,
 				19418EEF1BDF17D100C0F8BF /* SystemConfiguration.framework */,
@@ -110,6 +118,7 @@
 		19CE75DD1BD73453008698AE /* NickZihaoProject */ = {
 			isa = PBXGroup;
 			children = (
+				19484FCF1BE0D52800AB6870 /* NickZihaoProject.xcdatamodel */,
 				19418EDA1BDF14E900C0F8BF /* Bolts.framework */,
 				19418EDB1BDF14E900C0F8BF /* Parse.framework */,
 				19CE75DE1BD73454008698AE /* AppDelegate.swift */,
@@ -120,6 +129,7 @@
 				19CE75EA1BD73454008698AE /* Info.plist */,
 				A61181B21BD84ABA005C10F0 /* WelcomeViewController.swift */,
 				A61181B41BD84BE5005C10F0 /* UserInfoViewController.swift */,
+				19484FD11BE0DC6900AB6870 /* MapViewController.swift */,
 			);
 			path = NickZihaoProject;
 			sourceTree = "<group>";
@@ -196,6 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A61181B31BD84ABA005C10F0 /* WelcomeViewController.swift in Sources */,
+				19484FD21BE0DC6900AB6870 /* MapViewController.swift in Sources */,
+				19484FD01BE0D52800AB6870 /* NickZihaoProject.xcdatamodel in Sources */,
 				A61181B51BD84BE5005C10F0 /* UserInfoViewController.swift in Sources */,
 				19CE75E11BD73454008698AE /* ViewController.swift in Sources */,
 				19CE75DF1BD73454008698AE /* AppDelegate.swift in Sources */,

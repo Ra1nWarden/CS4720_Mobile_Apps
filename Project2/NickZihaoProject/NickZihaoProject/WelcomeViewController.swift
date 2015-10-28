@@ -49,7 +49,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let inputText = userNameField.text
@@ -67,4 +67,5 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
         latText.text="Lat: "+String(locations[locations.count-1].coordinate.latitude);
         longText.text="Long: "+String(locations[locations.count-1].coordinate.longitude);
     }
+    
 }

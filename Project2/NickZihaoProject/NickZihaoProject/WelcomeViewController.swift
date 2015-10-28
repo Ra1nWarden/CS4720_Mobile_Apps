@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var latText: UILabel!
+    @IBOutlet weak var longText: UILabel!
     
     var lm: CLLocationManager!;
     
@@ -63,6 +64,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        latText.text=String(locations[locations.count-1].coordinate.latitude);
+        latText.text="Lat: "+String(locations[locations.count-1].coordinate.latitude);
+        longText.text="Long: "+String(locations[locations.count-1].coordinate.longitude);
     }
 }

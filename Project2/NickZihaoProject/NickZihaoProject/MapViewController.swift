@@ -13,8 +13,8 @@ import CoreLocation;
 
 class MapViewController : UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet var map: MKMapView!
     
+    @IBOutlet weak var map: MKMapView!
     var lm: CLLocationManager!
     
     override func viewDidLoad() {

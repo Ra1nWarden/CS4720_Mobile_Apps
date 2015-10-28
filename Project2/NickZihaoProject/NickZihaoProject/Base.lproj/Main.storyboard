@@ -145,18 +145,20 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Akd-3s-wTx">
-                                <rect key="frame" x="277" y="384" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Akd-3s-wTx">
+                                <rect key="frame" x="285" y="384" width="30" height="30"/>
+                                <state key="normal" title="Map"/>
                                 <connections>
-                                    <segue destination="imX-Qg-Fnk" kind="show" id="3xP-bs-h0L"/>
+                                    <segue destination="69v-iC-5dZ" kind="show" id="eSq-r7-9aL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Akd-3s-wTx" firstAttribute="centerX" secondItem="iU2-X2-0XV" secondAttribute="centerX" id="Ffa-yz-Muq"/>
                             <constraint firstItem="KuS-uD-5dW" firstAttribute="bottom" secondItem="iU2-X2-0XV" secondAttribute="bottomMargin" constant="22" id="JxH-w4-DK1"/>
+                            <constraint firstItem="Akd-3s-wTx" firstAttribute="centerY" secondItem="iU2-X2-0XV" secondAttribute="centerY" constant="99" id="MjB-e6-tjt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4KQ-cz-XCp" secondAttribute="trailing" constant="100" id="Rq5-y0-B00"/>
                             <constraint firstItem="4KQ-cz-XCp" firstAttribute="top" secondItem="MUC-tt-5tQ" secondAttribute="bottom" constant="100" id="cTD-Ix-0av"/>
                             <constraint firstItem="4KQ-cz-XCp" firstAttribute="leading" secondItem="iU2-X2-0XV" secondAttribute="leadingMargin" constant="100" id="caB-6A-adC"/>
@@ -178,20 +180,30 @@
             <point key="canvasLocation" x="1352" y="657"/>
         </scene>
         <!--Map View Controller-->
-        <scene sceneID="IIc-13-WQI">
+        <scene sceneID="LIx-Sx-3df">
             <objects>
-                <viewController id="imX-Qg-Fnk" customClass="MapViewController" customModule="NickZihaoProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="eh7-HS-mWN">
+                <viewController id="69v-iC-5dZ" customClass="MapViewController" customModule="NickZihaoProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jhg-VS-mxa"/>
+                        <viewControllerLayoutGuide type="bottom" id="pJp-n2-8RX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jfl-Ny-X7x">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CpR-cc-dZb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <connections>
-                        <outlet property="map" destination="eh7-HS-mWN" id="Z5L-62-k21"/>
+                        <outlet property="map" destination="CpR-cc-dZb" id="7QJ-RQ-Vqq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EI7-lU-TjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="57i-Mz-EMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2085" y="596"/>
+            <point key="canvasLocation" x="2205" y="657"/>
         </scene>
     </scenes>
     <resources>

@@ -32,15 +32,15 @@ class UserInfoViewController: UIViewController, UIImagePickerControllerDelegate,
         picker.dismissViewControllerAnimated(true, completion: nil);
         if info[UIImagePickerControllerOriginalImage] is UIImage {
             image.image=info[UIImagePickerControllerOriginalImage] as! UIImage;
-            image.contentMode=UIViewContentMode.ScaleAspectFill;
+            //image.contentMode=UIViewContentMode.ScaleAspectFill;
         }
     }
     
     override func viewDidLoad() {
     
         super.viewDidLoad()
-        messageLabel.text = userName
-
+        messageLabel.text = "Name: "+userName
+        messageLabel.sizeToFit();
         // Do any additional setup after loading the view.
     }
 

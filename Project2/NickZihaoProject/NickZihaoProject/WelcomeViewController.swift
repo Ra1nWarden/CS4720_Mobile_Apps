@@ -75,4 +75,9 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
         longText.text="Long: "+String(locations[locations.count-1].coordinate.longitude);
     }
     
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+
+    
 }

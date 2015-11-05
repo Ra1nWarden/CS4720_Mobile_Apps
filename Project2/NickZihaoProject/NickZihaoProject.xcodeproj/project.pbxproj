@@ -24,7 +24,6 @@
 		19484FD21BE0DC6900AB6870 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19484FD11BE0DC6900AB6870 /* MapViewController.swift */; };
 		19484FD41BE0DD0500AB6870 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19484FD31BE0DD0500AB6870 /* MapKit.framework */; };
 		19CE75DF1BD73454008698AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CE75DE1BD73454008698AE /* AppDelegate.swift */; };
-		19CE75E11BD73454008698AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CE75E01BD73454008698AE /* ViewController.swift */; };
 		19CE75E41BD73454008698AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CE75E21BD73454008698AE /* Main.storyboard */; };
 		19CE75E61BD73454008698AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19CE75E51BD73454008698AE /* Assets.xcassets */; };
 		19CE75E91BD73454008698AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CE75E71BD73454008698AE /* LaunchScreen.storyboard */; };
@@ -52,7 +51,6 @@
 		19484FD31BE0DD0500AB6870 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		19CE75DB1BD73453008698AE /* NickZihaoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NickZihaoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19CE75DE1BD73454008698AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		19CE75E01BD73454008698AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19CE75E31BD73454008698AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19CE75E51BD73454008698AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19CE75E81BD73454008698AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				19418EDA1BDF14E900C0F8BF /* Bolts.framework */,
 				19418EDB1BDF14E900C0F8BF /* Parse.framework */,
 				19CE75DE1BD73454008698AE /* AppDelegate.swift */,
-				19CE75E01BD73454008698AE /* ViewController.swift */,
 				19CE75E21BD73454008698AE /* Main.storyboard */,
 				19CE75E51BD73454008698AE /* Assets.xcassets */,
 				19CE75E71BD73454008698AE /* LaunchScreen.storyboard */,
@@ -209,7 +206,6 @@
 				19484FD21BE0DC6900AB6870 /* MapViewController.swift in Sources */,
 				19484FD01BE0D52800AB6870 /* NickZihaoProject.xcdatamodel in Sources */,
 				A61181B51BD84BE5005C10F0 /* UserInfoViewController.swift in Sources */,
-				19CE75E11BD73454008698AE /* ViewController.swift in Sources */,
 				19CE75DF1BD73454008698AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

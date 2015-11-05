@@ -43,6 +43,10 @@ class UserInfoViewController: UIViewController, UIImagePickerControllerDelegate,
         messageLabel.sizeToFit();
         // Do any additional setup after loading the view.
     }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

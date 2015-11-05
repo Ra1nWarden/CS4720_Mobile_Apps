@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T38-cd-Vo1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T38-cd-Vo1">
                                 <rect key="frame" x="252" y="164" width="257" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -31,7 +31,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIT-0u-v7h">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIT-0u-v7h">
                                 <rect key="frame" x="252" y="223" width="257" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -52,14 +52,14 @@
                                     <segue destination="5X3-J1-29b" kind="show" id="OF0-me-Lul"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jed-aG-E7d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jed-aG-E7d">
                                 <rect key="frame" x="279" y="95" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaU-ta-Cnw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaU-ta-Cnw">
                                 <rect key="frame" x="279" y="124" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -70,6 +70,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Odi-Op-UDX" firstAttribute="top" secondItem="gIT-0u-v7h" secondAttribute="bottom" constant="20" id="0qO-S9-KCg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Odi-Op-UDX" secondAttribute="bottom" constant="20" id="2Mf-hQ-10i"/>
                             <constraint firstItem="2CF-JN-Rex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5hU-3I-XxJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Odi-Op-UDX" secondAttribute="trailing" constant="80" id="630-ik-fc0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jed-aG-E7d" secondAttribute="trailing" constant="100" id="ADc-lf-WOa"/>
@@ -77,7 +79,6 @@
                             <constraint firstItem="Odi-Op-UDX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="Iar-rj-8Ok"/>
                             <constraint firstItem="T38-cd-Vo1" firstAttribute="leading" secondItem="2CF-JN-Rex" secondAttribute="trailing" constant="20" id="J1x-HV-xb0"/>
                             <constraint firstItem="GaU-ta-Cnw" firstAttribute="top" secondItem="Jed-aG-E7d" secondAttribute="bottom" constant="8" id="Whc-0p-lue"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Odi-Op-UDX" secondAttribute="bottom" constant="80" id="X6v-KN-G2i"/>
                             <constraint firstItem="GaU-ta-Cnw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="Xkh-s9-gWo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GaU-ta-Cnw" secondAttribute="trailing" constant="100" id="b3f-IQ-jZV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gIT-0u-v7h" secondAttribute="trailing" constant="20" id="bYv-Hj-eim"/>

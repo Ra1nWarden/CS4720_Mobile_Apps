@@ -44,7 +44,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odi-Op-UDX">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odi-Op-UDX">
                                 <rect key="frame" x="276" y="337" width="49" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Submit"/>
@@ -77,6 +77,7 @@
                             <constraint firstItem="Odi-Op-UDX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="Iar-rj-8Ok"/>
                             <constraint firstItem="T38-cd-Vo1" firstAttribute="leading" secondItem="2CF-JN-Rex" secondAttribute="trailing" constant="20" id="J1x-HV-xb0"/>
                             <constraint firstItem="GaU-ta-Cnw" firstAttribute="top" secondItem="Jed-aG-E7d" secondAttribute="bottom" constant="8" id="Whc-0p-lue"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Odi-Op-UDX" secondAttribute="bottom" constant="80" id="X6v-KN-G2i"/>
                             <constraint firstItem="GaU-ta-Cnw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="Xkh-s9-gWo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GaU-ta-Cnw" secondAttribute="trailing" constant="100" id="b3f-IQ-jZV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gIT-0u-v7h" secondAttribute="trailing" constant="20" id="bYv-Hj-eim"/>

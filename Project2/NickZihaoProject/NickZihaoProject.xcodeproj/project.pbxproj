@@ -165,7 +165,7 @@
 				TargetAttributes = {
 					19CE75DA1BD73453008698AE = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 856TQUMVYK;
+						DevelopmentTeam = ASEVUMECUS;
 					};
 				};
 			};
@@ -331,7 +331,7 @@
 					"$(PROJECT_DIR)/NickZihaoProject",
 				);
 				INFOPLIST_FILE = NickZihaoProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.NickZihaoProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,7 +352,7 @@
 					"$(PROJECT_DIR)/NickZihaoProject",
 				);
 				INFOPLIST_FILE = NickZihaoProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.NickZihaoProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";

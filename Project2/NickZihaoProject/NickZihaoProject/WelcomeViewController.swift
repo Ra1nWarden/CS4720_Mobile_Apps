@@ -18,6 +18,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
     @IBOutlet weak var longText: UILabel!
     
     var lm: CLLocationManager!;
+    let keyForUsername = "username";
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -41,6 +42,11 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
         data["userName"]="It worked";
         data.saveInBackground();
         
+        let savedUsername = NSUserDefaults.standardUserDefaults().stringForKey(keyForUsername);
+        if (savedUsername != nil) {
+            userNameField.text = savedUsername
+        }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -55,6 +61,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
         let inputText = userNameField.text
         let destination = segue.destinationViewController as! UserInfoViewController
         destination.userName = inputText!
+        NSUserDefaults.standardUserDefaults().setObject(inputText, forKey: keyForUsername)
     }
 
 

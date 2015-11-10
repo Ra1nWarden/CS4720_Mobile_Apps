@@ -53,7 +53,37 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+     // Dispose of any resources that can be recreated.
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if (identifier == "login") {
+            let inputUsername = userNameField.text
+            let inputPassword = passwordField.text
+            if (inputUsername!.isEmpty || inputPassword!.isEmpty) {
+                let alert = UIAlertView()
+                alert.title = "Missing fields"
+                alert.message = "Please enter your login credentials!"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            }
+            PFUser.logInWithUsernameInBackground(inputUsername!, password: inputPassword!) {
+                (user: PFUser?, error: NSError?) -> Void in
+                    if user != nil {
+                        // Do stuff after successful login.
+                        self.performSegueWithIdentifier("login", sender: nil)
+                    } else {
+                        // The login failed. Check error to see why.
+                        let alert = UIAlertView()
+                        alert.title = "Login failure"
+                        alert.message = "Please check your username and password!"
+                        alert.addButtonWithTitle("Ok")
+                        alert.show()
+                    }
+            }
+            return false;
+        }
+        return true;
     }
 
 

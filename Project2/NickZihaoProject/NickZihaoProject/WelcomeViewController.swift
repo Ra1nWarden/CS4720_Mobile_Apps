@@ -58,10 +58,12 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
 
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let inputText = userNameField.text
-        let destination = segue.destinationViewController as! UserInfoViewController
-        destination.userName = inputText!
-        NSUserDefaults.standardUserDefaults().setObject(inputText, forKey: keyForUsername)
+        if (segue.identifier == "login") {
+            let inputText = userNameField.text
+            let destination = segue.destinationViewController as! UserInfoViewController
+            destination.userName = inputText!
+            NSUserDefaults.standardUserDefaults().setObject(inputText, forKey: keyForUsername)
+        }
     }
 
 

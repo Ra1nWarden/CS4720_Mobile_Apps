@@ -29,6 +29,7 @@
 		19CE75E91BD73454008698AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CE75E71BD73454008698AE /* LaunchScreen.storyboard */; };
 		A61181B31BD84ABA005C10F0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61181B21BD84ABA005C10F0 /* WelcomeViewController.swift */; };
 		A61181B51BD84BE5005C10F0 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61181B41BD84BE5005C10F0 /* UserInfoViewController.swift */; };
+		A642EEBF1BF1888200B9258B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642EEBE1BF1888200B9258B /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		19CE75EA1BD73454008698AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A61181B21BD84ABA005C10F0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A61181B41BD84BE5005C10F0 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		A642EEBE1BF1888200B9258B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				A61181B21BD84ABA005C10F0 /* WelcomeViewController.swift */,
 				A61181B41BD84BE5005C10F0 /* UserInfoViewController.swift */,
 				19484FD11BE0DC6900AB6870 /* MapViewController.swift */,
+				A642EEBE1BF1888200B9258B /* RegisterViewController.swift */,
 			);
 			path = NickZihaoProject;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				A61181B31BD84ABA005C10F0 /* WelcomeViewController.swift in Sources */,
 				19484FD21BE0DC6900AB6870 /* MapViewController.swift in Sources */,
 				19484FD01BE0D52800AB6870 /* NickZihaoProject.xcdatamodel in Sources */,
+				A642EEBF1BF1888200B9258B /* RegisterViewController.swift in Sources */,
 				A61181B51BD84BE5005C10F0 /* UserInfoViewController.swift in Sources */,
 				19CE75DF1BD73454008698AE /* AppDelegate.swift in Sources */,
 			);

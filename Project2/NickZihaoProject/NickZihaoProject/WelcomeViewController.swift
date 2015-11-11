@@ -38,10 +38,6 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
             latText.text="false";
         }
         
-        let data = PFObject(className: "Users");
-        data["userName"]="It worked";
-        data.saveInBackground();
-        
         let savedUsername = NSUserDefaults.standardUserDefaults().stringForKey(keyForUsername);
         if (savedUsername != nil) {
             userNameField.text = savedUsername
@@ -90,8 +86,6 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "login") {
             let inputText = userNameField.text
-            let destination = segue.destinationViewController as! UserInfoViewController
-            destination.userName = inputText!
             NSUserDefaults.standardUserDefaults().setObject(inputText, forKey: keyForUsername)
         }
     }

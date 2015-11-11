@@ -30,6 +30,10 @@
 		A61181B31BD84ABA005C10F0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61181B21BD84ABA005C10F0 /* WelcomeViewController.swift */; };
 		A61181B51BD84BE5005C10F0 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61181B41BD84BE5005C10F0 /* UserInfoViewController.swift */; };
 		A642EEBF1BF1888200B9258B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642EEBE1BF1888200B9258B /* RegisterViewController.swift */; };
+		A642EEC11BF303F800B9258B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642EEC01BF303F800B9258B /* HomeViewController.swift */; };
+		A642EEC31BF30CBA00B9258B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642EEC21BF30CBA00B9258B /* SettingsViewController.swift */; };
+		A642EEC51BF30E7100B9258B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642EEC41BF30E7100B9258B /* FeedViewController.swift */; };
+		A642EEC71BF30EC800B9258B /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642EEC61BF30EC800B9258B /* ComposeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		A61181B21BD84ABA005C10F0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A61181B41BD84BE5005C10F0 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		A642EEBE1BF1888200B9258B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A642EEC01BF303F800B9258B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A642EEC21BF30CBA00B9258B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A642EEC41BF30E7100B9258B /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A642EEC61BF30EC800B9258B /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,10 @@
 				A61181B41BD84BE5005C10F0 /* UserInfoViewController.swift */,
 				19484FD11BE0DC6900AB6870 /* MapViewController.swift */,
 				A642EEBE1BF1888200B9258B /* RegisterViewController.swift */,
+				A642EEC01BF303F800B9258B /* HomeViewController.swift */,
+				A642EEC21BF30CBA00B9258B /* SettingsViewController.swift */,
+				A642EEC41BF30E7100B9258B /* FeedViewController.swift */,
+				A642EEC61BF30EC800B9258B /* ComposeViewController.swift */,
 			);
 			path = NickZihaoProject;
 			sourceTree = "<group>";
@@ -206,11 +218,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A61181B31BD84ABA005C10F0 /* WelcomeViewController.swift in Sources */,
+				A642EEC51BF30E7100B9258B /* FeedViewController.swift in Sources */,
 				19484FD21BE0DC6900AB6870 /* MapViewController.swift in Sources */,
 				19484FD01BE0D52800AB6870 /* NickZihaoProject.xcdatamodel in Sources */,
 				A642EEBF1BF1888200B9258B /* RegisterViewController.swift in Sources */,
+				A642EEC71BF30EC800B9258B /* ComposeViewController.swift in Sources */,
 				A61181B51BD84BE5005C10F0 /* UserInfoViewController.swift in Sources */,
+				A642EEC11BF303F800B9258B /* HomeViewController.swift in Sources */,
 				19CE75DF1BD73454008698AE /* AppDelegate.swift in Sources */,
+				A642EEC31BF30CBA00B9258B /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

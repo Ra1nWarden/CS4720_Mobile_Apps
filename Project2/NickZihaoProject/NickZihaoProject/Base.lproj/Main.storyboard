@@ -9,7 +9,7 @@
         <!--Yik Pik-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="NickZihaoProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -117,7 +117,7 @@
         <!--Map-->
         <scene sceneID="91S-MF-dEq">
             <objects>
-                <viewController title="Map" id="hc4-gi-J3Q" customClass="MapViewController" customModule="NickZihaoProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map" id="hc4-gi-J3Q" customClass="MapViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6MT-Pu-DG4"/>
                         <viewControllerLayoutGuide type="bottom" id="hFe-Nf-uEw"/>
@@ -152,7 +152,7 @@
         <!--Settings-->
         <scene sceneID="SNi-9n-4da">
             <objects>
-                <tableViewController title="Settings" id="sE4-kE-b9f" customClass="SettingsViewController" customModule="NickZihaoProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="sE4-kE-b9f" customClass="SettingsViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bb9-6g-HtV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,7 +184,7 @@
         <!--New-->
         <scene sceneID="ann-kx-FMB">
             <objects>
-                <viewController title="New" id="6bi-cD-rD1" customClass="ComposeViewController" customModule="NickZihaoProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New" id="6bi-cD-rD1" customClass="ComposeViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZHD-dC-GHL"/>
                         <viewControllerLayoutGuide type="bottom" id="UJ1-Og-ds9"/>
@@ -204,7 +204,7 @@
         <!--Feed-->
         <scene sceneID="Ahm-en-cLl">
             <objects>
-                <tableViewController title="Feed" id="UZk-NG-WEg" customClass="FeedViewController" customModule="NickZihaoProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Feed" id="UZk-NG-WEg" customClass="FeedViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WGw-NI-Zme">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,7 +236,7 @@
         <!--Home View Controller-->
         <scene sceneID="LBX-4A-xIw">
             <objects>
-                <tabBarController id="i8i-da-16V" customClass="HomeViewController" customModule="NickZihaoProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="i8i-da-16V" customClass="HomeViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="hYm-yr-M1B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -257,7 +257,7 @@
         <!--Register View Controller-->
         <scene sceneID="T2X-ng-sN7">
             <objects>
-                <viewController id="Bhf-zS-P9N" customClass="RegisterViewController" customModule="NickZihaoProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bhf-zS-P9N" customClass="RegisterViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5LM-XY-oAW"/>
                         <viewControllerLayoutGuide type="bottom" id="gAH-ft-fxA"/>

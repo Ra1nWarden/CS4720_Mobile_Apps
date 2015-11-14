@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		06F9F37E4F79F71B9ABA96B6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED6A64F0A418282080C115 /* Pods.framework */; };
-		E483361D1BF6C9BB009C2041 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336151BF6C9BB009C2041 /* ComposeViewController.swift */; };
-		E483361E1BF6C9BB009C2041 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336161BF6C9BB009C2041 /* FeedViewController.swift */; };
-		E483361F1BF6C9BB009C2041 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336171BF6C9BB009C2041 /* HomeViewController.swift */; };
-		E48336201BF6C9BB009C2041 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336181BF6C9BB009C2041 /* MapViewController.swift */; };
-		E48336211BF6C9BB009C2041 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336191BF6C9BB009C2041 /* RegisterViewController.swift */; };
-		E48336221BF6C9BB009C2041 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483361A1BF6C9BB009C2041 /* SettingsViewController.swift */; };
-		E48336231BF6C9BB009C2041 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483361B1BF6C9BB009C2041 /* UserInfoViewController.swift */; };
-		E48336241BF6C9BB009C2041 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483361C1BF6C9BB009C2041 /* WelcomeViewController.swift */; };
+		E49D62351BF6DA89008B6910 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */; };
+		E49D62361BF6DA89008B6910 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D622E1BF6DA89008B6910 /* FeedViewController.swift */; };
+		E49D62371BF6DA89008B6910 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D622F1BF6DA89008B6910 /* HomeViewController.swift */; };
+		E49D62381BF6DA89008B6910 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62301BF6DA89008B6910 /* MapViewController.swift */; };
+		E49D62391BF6DA89008B6910 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62311BF6DA89008B6910 /* RegisterViewController.swift */; };
+		E49D623A1BF6DA89008B6910 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62321BF6DA89008B6910 /* SettingsViewController.swift */; };
+		E49D623B1BF6DA89008B6910 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62331BF6DA89008B6910 /* UserInfoViewController.swift */; };
+		E49D623C1BF6DA89008B6910 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */; };
 		E4AD4DB31BF6C793008039BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AD4DB21BF6C793008039BE /* AppDelegate.swift */; };
 		E4AD4DB81BF6C793008039BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4AD4DB61BF6C793008039BE /* Main.storyboard */; };
 		E4AD4DBB1BF6C793008039BE /* Yik_Pik.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4AD4DB91BF6C793008039BE /* Yik_Pik.xcdatamodeld */; };
@@ -27,14 +27,14 @@
 		0F135E07482721AA027B567C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3B838D822E6ADA465848C224 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2ED6A64F0A418282080C115 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E48336151BF6C9BB009C2041 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/ComposeViewController.swift; sourceTree = "<group>"; };
-		E48336161BF6C9BB009C2041 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/FeedViewController.swift; sourceTree = "<group>"; };
-		E48336171BF6C9BB009C2041 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/HomeViewController.swift; sourceTree = "<group>"; };
-		E48336181BF6C9BB009C2041 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/MapViewController.swift; sourceTree = "<group>"; };
-		E48336191BF6C9BB009C2041 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/RegisterViewController.swift; sourceTree = "<group>"; };
-		E483361A1BF6C9BB009C2041 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/SettingsViewController.swift; sourceTree = "<group>"; };
-		E483361B1BF6C9BB009C2041 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/UserInfoViewController.swift; sourceTree = "<group>"; };
-		E483361C1BF6C9BB009C2041 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/WelcomeViewController.swift; sourceTree = "<group>"; };
+		E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		E49D622E1BF6DA89008B6910 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		E49D622F1BF6DA89008B6910 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E49D62301BF6DA89008B6910 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E49D62311BF6DA89008B6910 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E49D62321BF6DA89008B6910 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E49D62331BF6DA89008B6910 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E4AD4DAF1BF6C793008039BE /* Yik Pik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yik Pik.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4AD4DB21BF6C793008039BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4AD4DB71BF6C793008039BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,14 +94,14 @@
 		E4AD4DB11BF6C793008039BE /* Yik Pik */ = {
 			isa = PBXGroup;
 			children = (
-				E48336151BF6C9BB009C2041 /* ComposeViewController.swift */,
-				E48336161BF6C9BB009C2041 /* FeedViewController.swift */,
-				E48336171BF6C9BB009C2041 /* HomeViewController.swift */,
-				E48336181BF6C9BB009C2041 /* MapViewController.swift */,
-				E48336191BF6C9BB009C2041 /* RegisterViewController.swift */,
-				E483361A1BF6C9BB009C2041 /* SettingsViewController.swift */,
-				E483361B1BF6C9BB009C2041 /* UserInfoViewController.swift */,
-				E483361C1BF6C9BB009C2041 /* WelcomeViewController.swift */,
+				E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */,
+				E49D622E1BF6DA89008B6910 /* FeedViewController.swift */,
+				E49D622F1BF6DA89008B6910 /* HomeViewController.swift */,
+				E49D62301BF6DA89008B6910 /* MapViewController.swift */,
+				E49D62311BF6DA89008B6910 /* RegisterViewController.swift */,
+				E49D62321BF6DA89008B6910 /* SettingsViewController.swift */,
+				E49D62331BF6DA89008B6910 /* UserInfoViewController.swift */,
+				E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */,
 				E4AD4DB21BF6C793008039BE /* AppDelegate.swift */,
 				E4AD4DB61BF6C793008039BE /* Main.storyboard */,
 				E4AD4DBC1BF6C793008039BE /* Assets.xcassets */,
@@ -234,16 +234,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49D62371BF6DA89008B6910 /* HomeViewController.swift in Sources */,
+				E49D623C1BF6DA89008B6910 /* WelcomeViewController.swift in Sources */,
+				E49D62381BF6DA89008B6910 /* MapViewController.swift in Sources */,
+				E49D62391BF6DA89008B6910 /* RegisterViewController.swift in Sources */,
+				E49D62351BF6DA89008B6910 /* ComposeViewController.swift in Sources */,
+				E49D623B1BF6DA89008B6910 /* UserInfoViewController.swift in Sources */,
 				E4AD4DBB1BF6C793008039BE /* Yik_Pik.xcdatamodeld in Sources */,
-				E48336241BF6C9BB009C2041 /* WelcomeViewController.swift in Sources */,
-				E483361E1BF6C9BB009C2041 /* FeedViewController.swift in Sources */,
-				E48336211BF6C9BB009C2041 /* RegisterViewController.swift in Sources */,
+				E49D62361BF6DA89008B6910 /* FeedViewController.swift in Sources */,
 				E4AD4DB31BF6C793008039BE /* AppDelegate.swift in Sources */,
-				E483361D1BF6C9BB009C2041 /* ComposeViewController.swift in Sources */,
-				E483361F1BF6C9BB009C2041 /* HomeViewController.swift in Sources */,
-				E48336231BF6C9BB009C2041 /* UserInfoViewController.swift in Sources */,
-				E48336201BF6C9BB009C2041 /* MapViewController.swift in Sources */,
-				E48336221BF6C9BB009C2041 /* SettingsViewController.swift in Sources */,
+				E49D623A1BF6DA89008B6910 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

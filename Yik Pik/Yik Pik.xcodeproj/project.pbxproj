@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06F9F37E4F79F71B9ABA96B6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED6A64F0A418282080C115 /* Pods.framework */; };
+		E483361D1BF6C9BB009C2041 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336151BF6C9BB009C2041 /* ComposeViewController.swift */; };
+		E483361E1BF6C9BB009C2041 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336161BF6C9BB009C2041 /* FeedViewController.swift */; };
+		E483361F1BF6C9BB009C2041 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336171BF6C9BB009C2041 /* HomeViewController.swift */; };
+		E48336201BF6C9BB009C2041 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336181BF6C9BB009C2041 /* MapViewController.swift */; };
+		E48336211BF6C9BB009C2041 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48336191BF6C9BB009C2041 /* RegisterViewController.swift */; };
+		E48336221BF6C9BB009C2041 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483361A1BF6C9BB009C2041 /* SettingsViewController.swift */; };
+		E48336231BF6C9BB009C2041 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483361B1BF6C9BB009C2041 /* UserInfoViewController.swift */; };
+		E48336241BF6C9BB009C2041 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483361C1BF6C9BB009C2041 /* WelcomeViewController.swift */; };
+		E4AD4DB31BF6C793008039BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AD4DB21BF6C793008039BE /* AppDelegate.swift */; };
+		E4AD4DB81BF6C793008039BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4AD4DB61BF6C793008039BE /* Main.storyboard */; };
+		E4AD4DBB1BF6C793008039BE /* Yik_Pik.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4AD4DB91BF6C793008039BE /* Yik_Pik.xcdatamodeld */; };
+		E4AD4DBD1BF6C793008039BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4AD4DBC1BF6C793008039BE /* Assets.xcassets */; };
+		E4AD4DC01BF6C793008039BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4AD4DBE1BF6C793008039BE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F135E07482721AA027B567C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3B838D822E6ADA465848C224 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C2ED6A64F0A418282080C115 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48336151BF6C9BB009C2041 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/ComposeViewController.swift; sourceTree = "<group>"; };
+		E48336161BF6C9BB009C2041 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/FeedViewController.swift; sourceTree = "<group>"; };
+		E48336171BF6C9BB009C2041 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/HomeViewController.swift; sourceTree = "<group>"; };
+		E48336181BF6C9BB009C2041 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/MapViewController.swift; sourceTree = "<group>"; };
+		E48336191BF6C9BB009C2041 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/RegisterViewController.swift; sourceTree = "<group>"; };
+		E483361A1BF6C9BB009C2041 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/SettingsViewController.swift; sourceTree = "<group>"; };
+		E483361B1BF6C9BB009C2041 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/UserInfoViewController.swift; sourceTree = "<group>"; };
+		E483361C1BF6C9BB009C2041 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../../Project2/NickZihaoProject/NickZihaoProject/WelcomeViewController.swift; sourceTree = "<group>"; };
+		E4AD4DAF1BF6C793008039BE /* Yik Pik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yik Pik.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4AD4DB21BF6C793008039BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4AD4DB71BF6C793008039BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4AD4DBA1BF6C793008039BE /* Yik_Pik.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yik_Pik.xcdatamodel; sourceTree = "<group>"; };
+		E4AD4DBC1BF6C793008039BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4AD4DBF1BF6C793008039BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4AD4DC11BF6C793008039BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4AD4DAC1BF6C793008039BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F9F37E4F79F71B9ABA96B6 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4DF46D5A5CD4C3DB52CC6D17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2ED6A64F0A418282080C115 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D9011F6998C0DE691383914 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B838D822E6ADA465848C224 /* Pods.debug.xcconfig */,
+				0F135E07482721AA027B567C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E4AD4DA61BF6C793008039BE = {
+			isa = PBXGroup;
+			children = (
+				E4AD4DB11BF6C793008039BE /* Yik Pik */,
+				E4AD4DB01BF6C793008039BE /* Products */,
+				8D9011F6998C0DE691383914 /* Pods */,
+				4DF46D5A5CD4C3DB52CC6D17 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E4AD4DB01BF6C793008039BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4AD4DAF1BF6C793008039BE /* Yik Pik.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4AD4DB11BF6C793008039BE /* Yik Pik */ = {
+			isa = PBXGroup;
+			children = (
+				E48336151BF6C9BB009C2041 /* ComposeViewController.swift */,
+				E48336161BF6C9BB009C2041 /* FeedViewController.swift */,
+				E48336171BF6C9BB009C2041 /* HomeViewController.swift */,
+				E48336181BF6C9BB009C2041 /* MapViewController.swift */,
+				E48336191BF6C9BB009C2041 /* RegisterViewController.swift */,
+				E483361A1BF6C9BB009C2041 /* SettingsViewController.swift */,
+				E483361B1BF6C9BB009C2041 /* UserInfoViewController.swift */,
+				E483361C1BF6C9BB009C2041 /* WelcomeViewController.swift */,
+				E4AD4DB21BF6C793008039BE /* AppDelegate.swift */,
+				E4AD4DB61BF6C793008039BE /* Main.storyboard */,
+				E4AD4DBC1BF6C793008039BE /* Assets.xcassets */,
+				E4AD4DBE1BF6C793008039BE /* LaunchScreen.storyboard */,
+				E4AD4DC11BF6C793008039BE /* Info.plist */,
+				E4AD4DB91BF6C793008039BE /* Yik_Pik.xcdatamodeld */,
+			);
+			path = "Yik Pik";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4AD4DAE1BF6C793008039BE /* Yik Pik */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4AD4DC41BF6C793008039BE /* Build configuration list for PBXNativeTarget "Yik Pik" */;
+			buildPhases = (
+				FDBA03617FFB2607BFC6F541 /* Check Pods Manifest.lock */,
+				E4AD4DAB1BF6C793008039BE /* Sources */,
+				E4AD4DAC1BF6C793008039BE /* Frameworks */,
+				E4AD4DAD1BF6C793008039BE /* Resources */,
+				3268F845183CEC0DA4A08EEC /* Embed Pods Frameworks */,
+				1F7F4AECC0BA709F36BFC734 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Yik Pik";
+			productName = "Yik Pik";
+			productReference = E4AD4DAF1BF6C793008039BE /* Yik Pik.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4AD4DA71BF6C793008039BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Nick and Zihao";
+				TargetAttributes = {
+					E4AD4DAE1BF6C793008039BE = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = E4AD4DAA1BF6C793008039BE /* Build configuration list for PBXProject "Yik Pik" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4AD4DA61BF6C793008039BE;
+			productRefGroup = E4AD4DB01BF6C793008039BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4AD4DAE1BF6C793008039BE /* Yik Pik */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4AD4DAD1BF6C793008039BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4AD4DC01BF6C793008039BE /* LaunchScreen.storyboard in Resources */,
+				E4AD4DBD1BF6C793008039BE /* Assets.xcassets in Resources */,
+				E4AD4DB81BF6C793008039BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F7F4AECC0BA709F36BFC734 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3268F845183CEC0DA4A08EEC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDBA03617FFB2607BFC6F541 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4AD4DAB1BF6C793008039BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4AD4DBB1BF6C793008039BE /* Yik_Pik.xcdatamodeld in Sources */,
+				E48336241BF6C9BB009C2041 /* WelcomeViewController.swift in Sources */,
+				E483361E1BF6C9BB009C2041 /* FeedViewController.swift in Sources */,
+				E48336211BF6C9BB009C2041 /* RegisterViewController.swift in Sources */,
+				E4AD4DB31BF6C793008039BE /* AppDelegate.swift in Sources */,
+				E483361D1BF6C9BB009C2041 /* ComposeViewController.swift in Sources */,
+				E483361F1BF6C9BB009C2041 /* HomeViewController.swift in Sources */,
+				E48336231BF6C9BB009C2041 /* UserInfoViewController.swift in Sources */,
+				E48336201BF6C9BB009C2041 /* MapViewController.swift in Sources */,
+				E48336221BF6C9BB009C2041 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E4AD4DB61BF6C793008039BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4AD4DB71BF6C793008039BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4AD4DBE1BF6C793008039BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4AD4DBF1BF6C793008039BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4AD4DC21BF6C793008039BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E4AD4DC31BF6C793008039BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4AD4DC51BF6C793008039BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B838D822E6ADA465848C224 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Yik Pik/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cs4720.Yik-Pik";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4AD4DC61BF6C793008039BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F135E07482721AA027B567C /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Yik Pik/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cs4720.Yik-Pik";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4AD4DAA1BF6C793008039BE /* Build configuration list for PBXProject "Yik Pik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4AD4DC21BF6C793008039BE /* Debug */,
+				E4AD4DC31BF6C793008039BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4AD4DC41BF6C793008039BE /* Build configuration list for PBXNativeTarget "Yik Pik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4AD4DC51BF6C793008039BE /* Debug */,
+				E4AD4DC61BF6C793008039BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E4AD4DB91BF6C793008039BE /* Yik_Pik.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E4AD4DBA1BF6C793008039BE /* Yik_Pik.xcdatamodel */,
+			);
+			currentVersion = E4AD4DBA1BF6C793008039BE /* Yik_Pik.xcdatamodel */;
+			path = Yik_Pik.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E4AD4DA71BF6C793008039BE /* Project object */;
+}

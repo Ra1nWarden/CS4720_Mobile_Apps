@@ -159,12 +159,22 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7MQ-bc-4QB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="oM9-F8-W19" style="IBUITableViewCellStyleDefault" id="7MQ-bc-4QB">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7MQ-bc-4QB" id="WYT-MC-Uso">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" tableViewCell="7MQ-bc-4QB" id="WYT-MC-Uso">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oM9-F8-W19">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -192,10 +202,60 @@
                     <view key="view" contentMode="scaleToFill" id="mrb-wG-Vp7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sNJ-LU-LKq">
+                                <rect key="frame" x="116" y="76" width="368" height="447"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR8-Wu-CAO">
+                                        <rect key="frame" x="43" y="19" width="34" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wpH-xn-QPj">
+                                        <rect key="frame" x="99" y="15" width="244" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGj-wV-5vJ">
+                                        <rect key="frame" x="20" y="98" width="328" height="306"/>
+                                        <animations/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MU9-NR-aC5">
+                                        <rect key="frame" x="163" y="50" width="43" height="45"/>
+                                        <animations/>
+                                        <state key="normal" title="Button" image="camera"/>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="6bi-cD-rD1" eventType="touchUpInside" id="TMA-dq-nbH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NG-IE-YDf">
+                                        <rect key="frame" x="160" y="417" width="49" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitPik:" destination="6bi-cD-rD1" eventType="touchUpInside" id="8pY-3P-w3l"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sNJ-LU-LKq" firstAttribute="centerY" secondItem="mrb-wG-Vp7" secondAttribute="centerY" id="73K-p4-ivS"/>
+                            <constraint firstItem="sNJ-LU-LKq" firstAttribute="centerX" secondItem="mrb-wG-Vp7" secondAttribute="centerX" id="9jE-pE-xAE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="New" image="edit" id="9IY-qj-2z3"/>
+                    <connections>
+                        <outlet property="image" destination="mGj-wV-5vJ" id="Hln-Jl-i4g"/>
+                        <outlet property="titleField" destination="wpH-xn-QPj" id="tYX-Vq-EyD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVt-3g-YFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -361,6 +421,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="100" height="100"/>
         <image name="edit" width="32" height="32"/>
         <image name="feed" width="32" height="32"/>
         <image name="map" width="32" height="32"/>

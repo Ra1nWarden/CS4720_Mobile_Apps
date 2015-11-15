@@ -31,13 +31,6 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
         lm.desiredAccuracy=kCLLocationAccuracyBest;
         lm.startUpdatingLocation();
         
-        if (CLLocationManager.locationServicesEnabled()) {
-            latText.text="true";
-        }
-        else {
-            latText.text="false";
-        }
-        
         let savedUsername = NSUserDefaults.standardUserDefaults().stringForKey(keyForUsername);
         if (savedUsername != nil) {
             userNameField.text = savedUsername

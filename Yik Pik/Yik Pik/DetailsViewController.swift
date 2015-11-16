@@ -9,11 +9,13 @@
 import UIKit
 import Parse
 import ParseUI
+import SwiftRandom
 
 class DetailsViewController: PFQueryTableViewController {
     
     var item: PFObject? = nil
-
+    var nameMaps: NSMutableDictionary?
+    
     @IBOutlet weak var photo: PFImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,8 @@ class DetailsViewController: PFQueryTableViewController {
             photo.loadInBackground()
             self.title = item!["title"] as? String
         }
+        
+        nameMaps = NSMutableDictionary?.init()
         // Do any additional setup after loading the view.
     }
 
@@ -66,11 +70,19 @@ class DetailsViewController: PFQueryTableViewController {
         
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? PFTableViewCell
         if cell == nil {
-            cell = PFTableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier)
+            cell = PFTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: cellIdentifier)
         }
         
         // Configure the cell to show todo item with a priority at the bottom
         if let object = object {
+            let user = object["author"] as? PFUser
+            let userId = user?.objectId
+            var userName = nameMaps?.objectForKey(userId!) as? String
+            if userName == nil {
+                userName = Randoms.randomFakeName()
+                nameMaps?.setObject(userName!, forKey: userId!)
+            }
+            cell!.textLabel?.text = userName
             cell!.detailTextLabel?.text = object["content"] as? String
         }
         

@@ -68,8 +68,12 @@ class FeedViewController: PFQueryTableViewController {
             cell?.pictureView.contentMode = .ScaleAspectFit
             cell?.pictureView.file = object["photo"] as? PFFile
             cell?.pictureView.loadInBackground()
+            let query = object.relationForKey("comments").query()
+            query!.countObjectsInBackgroundWithBlock {
+                (count: Int32, error: NSError?) -> Void in
+                cell?.commentView.text = NSString(format: "%d comments", count) as String
+            }
         }
-        
         return cell
     }
     

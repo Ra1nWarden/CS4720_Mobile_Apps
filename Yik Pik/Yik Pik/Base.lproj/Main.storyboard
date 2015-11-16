@@ -259,23 +259,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVt-3g-YFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2805" y="-385"/>
+            <point key="canvasLocation" x="2805" y="-384.99999999999989"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Ahm-en-cLl">
             <objects>
                 <tableViewController title="Feed" id="UZk-NG-WEg" customClass="FeedViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WGw-NI-Zme">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="381" sectionHeaderHeight="28" sectionFooterHeight="28" id="WGw-NI-Zme">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZFe-tE-Cgl">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="381" id="ZFe-tE-Cgl">
+                                <rect key="frame" x="0.0" y="92" width="600" height="381"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZFe-tE-Cgl" id="2Kw-if-Aa8">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="380"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -291,12 +291,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBX-Or-LeT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2805" y="290"/>
+            <point key="canvasLocation" x="2805" y="289.99999999999994"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="LBX-4A-xIw">
             <objects>
                 <tabBarController id="i8i-da-16V" customClass="HomeViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="TXd-Ga-oL8"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="hYm-yr-M1B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -312,7 +313,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVL-If-ygq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="657"/>
+            <point key="canvasLocation" x="2027.9999999999998" y="657"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="T2X-ng-sN7">
@@ -390,6 +391,7 @@
                             <constraint firstItem="4wA-Jh-IHf" firstAttribute="centerX" secondItem="5Ow-ZL-cST" secondAttribute="centerX" id="h9e-NZ-pzv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="B6P-Vi-Cq4"/>
                     <connections>
                         <outlet property="confirmField" destination="D77-fE-cP3" id="iS9-sl-wde"/>
                         <outlet property="passwordField" destination="oMl-el-q20" id="AMe-J7-WM0"/>
@@ -398,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nr6-G6-yH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="495" y="1447"/>
+            <point key="canvasLocation" x="495" y="1446.9999999999995"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DfB-mp-4l0">

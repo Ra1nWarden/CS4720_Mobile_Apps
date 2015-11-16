@@ -1,86 +1,79 @@
 //
 //  FeedViewController.swift
-//  NickZihaoProject
+//  Yik Pik
 //
-//  Created by Zihao Wang on 11/11/15.
-//  Copyright © 2015年 Nick&Zihao. All rights reserved.
+//  Created by WangZihao on 11/15/15.
+//  Copyright © 2015 Nick and Zihao. All rights reserved.
 //
 
 import UIKit
+import Parse
+import ParseUI
 
-class FeedViewController: UITableViewController {
+class FeedViewController: PFQueryTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    override init(style: UITableViewStyle, className: String?) {
+        super.init(style: style, className: className)
+        parseClassName = "Pik"
+        pullToRefreshEnabled = true
+        paginationEnabled = true
+        objectsPerPage = 10
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        parseClassName = "Pik"
+        pullToRefreshEnabled = true
+        paginationEnabled = true
+        objectsPerPage = 10
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+    
+    override func queryForTable() -> PFQuery {
+        let query = PFQuery(className: "Pik")
+        
+        // If no objects are loaded in memory, we look to the cache first to fill the table
+        // and then subsequently do a query against the network.
+        if self.objects!.count == 0 {
+            query.cachePolicy = .CacheThenNetwork
+        }
+        
+        query.orderByDescending("createdAt")
+        
+        return query
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
+        let cellIdentifier = "feed_cell"
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? FeedViewCell
+        if cell == nil {
+            tableView.registerNib(UINib.init(nibName: "FeedViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+            cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? FeedViewCell
+        }
+        
+        // Configure the cell to show todo item with a priority at the bottom
+        if let object = object {
+            cell?.titleLabel.text = object["title"] as? String
+            cell?.pictureView.contentMode = .ScaleAspectFit
+            cell?.pictureView.file = object["photo"] as? PFFile
+            cell?.pictureView.loadInBackground()
+        }
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+    
+    
 
     /*
     // MARK: - Navigation

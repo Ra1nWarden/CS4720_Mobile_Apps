@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ParseUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98F4912D748E09626D1B314043FB9EB3</key>
+		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
+		<key>D246A0B888290794D4C0B85F475DBC51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F710EAB41DD6932844C4A82A87A2628F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

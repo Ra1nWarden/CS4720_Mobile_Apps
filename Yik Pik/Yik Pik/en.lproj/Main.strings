@@ -1,0 +1,72 @@
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "1NG-IE-YDf"; */
+"1NG-IE-YDf.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "2CF-JN-Rex"; */
+"2CF-JN-Rex.text" = "Username";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "4s2-Ko-Gcw"; */
+"4s2-Ko-Gcw.title" = "Map";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "4wA-Jh-IHf"; */
+"4wA-Jh-IHf.normalTitle" = "Submit";
+
+/* Class = "UINavigationItem"; title = "Yik Pik"; ObjectID = "586-Al-Stj"; */
+"586-Al-Stj.title" = "Yik Pik";
+
+/* Class = "UIViewController"; title = "New"; ObjectID = "6bi-cD-rD1"; */
+"6bi-cD-rD1.title" = "New";
+
+/* Class = "UITabBarItem"; title = "New"; ObjectID = "9IY-qj-2z3"; */
+"9IY-qj-2z3.title" = "New";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "D7I-Hu-hb0"; */
+"D7I-Hu-hb0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GaU-ta-Cnw"; */
+"GaU-ta-Cnw.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Jed-aG-E7d"; */
+"Jed-aG-E7d.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "MU9-NR-aC5"; */
+"MU9-NR-aC5.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "Nap-1F-1fd"; */
+"Nap-1F-1fd.title" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Odi-Op-UDX"; */
+"Odi-Op-UDX.normalTitle" = "Submit";
+
+/* Class = "UITableViewController"; title = "Feed"; ObjectID = "UZk-NG-WEg"; */
+"UZk-NG-WEg.title" = "Feed";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "YCd-Gv-ZSC"; */
+"YCd-Gv-ZSC.text" = "Username";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "eR8-Wu-CAO"; */
+"eR8-Wu-CAO.text" = "Title";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "gWl-Om-aX1"; */
+"gWl-Om-aX1.text" = "Password";
+
+/* Class = "UIViewController"; title = "Map"; ObjectID = "hc4-gi-J3Q"; */
+"hc4-gi-J3Q.title" = "Map";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "oM9-F8-W19"; */
+"oM9-F8-W19.text" = "Title";
+
+/* Class = "UITableViewController"; title = "Settings"; ObjectID = "sE4-kE-b9f"; */
+"sE4-kE-b9f.title" = "Settings";
+
+/* Class = "UILabel"; text = "Confirm"; ObjectID = "tGu-kl-bVG"; */
+"tGu-kl-bVG.text" = "Confirm";
+
+/* Class = "UITabBarItem"; title = "Feed"; ObjectID = "ujn-RW-NMC"; */
+"ujn-RW-NMC.title" = "Feed";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "xat-mD-1CL"; */
+"xat-mD-1CL.text" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "zlk-wA-E9T"; */
+"zlk-wA-E9T.normalTitle" = "Register";

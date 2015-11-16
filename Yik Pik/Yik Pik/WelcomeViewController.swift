@@ -36,8 +36,12 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
             userNameField.text = savedUsername
         }
         
-        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        passwordField.text = ""
     }
 
     override func didReceiveMemoryWarning() {

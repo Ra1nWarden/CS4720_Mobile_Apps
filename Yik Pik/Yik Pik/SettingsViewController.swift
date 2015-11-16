@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SettingsViewController: UITableViewController {
 
@@ -49,6 +50,26 @@ class SettingsViewController: UITableViewController {
         cell!.textLabel!.text = "Log out"
 
         return cell!
+    }
+    
+    func alert(title: String, content: String) {
+        let alert = UIAlertView()
+        alert.title = title
+        alert.message = content
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        PFUser.logOutInBackgroundWithBlock {
+            (error: NSError?) -> Void in
+            if error == nil{
+                self.alert("Log out", content: "Success!")
+                self.navigationController!.popToRootViewControllerAnimated(true)
+            } else {
+                self.alert("Log out failure", content: "Network error!")
+            }
+        }
     }
 
     /*

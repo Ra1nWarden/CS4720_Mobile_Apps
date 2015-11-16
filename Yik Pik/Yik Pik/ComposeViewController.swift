@@ -21,6 +21,12 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         setUpLocationManager()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        titleField.text = ""
+        image.image = nil
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

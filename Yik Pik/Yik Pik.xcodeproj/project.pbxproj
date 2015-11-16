@@ -100,6 +100,7 @@
 		E4AD4DB11BF6C793008039BE /* Yik Pik */ = {
 			isa = PBXGroup;
 			children = (
+				E4AD4DB21BF6C793008039BE /* AppDelegate.swift */,
 				E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */,
 				E49D622F1BF6DA89008B6910 /* HomeViewController.swift */,
 				E4EFAD891BF947AA006A3552 /* FeedViewController.swift */,
@@ -110,14 +111,13 @@
 				E49D62321BF6DA89008B6910 /* SettingsViewController.swift */,
 				E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */,
 				E46AC1F01BF9832F0014822E /* DetailsViewController.swift */,
-				E4AD4DB21BF6C793008039BE /* AppDelegate.swift */,
+				E46AC1F21BF98FBA0014822E /* ReplyViewController.swift */,
 				E4AD4DB01BF6C793008039BE /* Products */,
 				E4AD4DB61BF6C793008039BE /* Main.storyboard */,
 				E4AD4DBC1BF6C793008039BE /* Assets.xcassets */,
 				E4AD4DBE1BF6C793008039BE /* LaunchScreen.storyboard */,
 				E4AD4DC11BF6C793008039BE /* Info.plist */,
 				E4AD4DB91BF6C793008039BE /* Yik_Pik.xcdatamodeld */,
-				E46AC1F21BF98FBA0014822E /* ReplyViewController.swift */,
 			);
 			path = "Yik Pik";
 			sourceTree = "<group>";

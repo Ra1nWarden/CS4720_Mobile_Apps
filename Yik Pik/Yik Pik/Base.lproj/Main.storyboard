@@ -332,7 +332,7 @@
                         <barButtonItem key="rightBarButtonItem" image="comment" id="c8o-rM-EOo">
                             <connections>
                                 <action selector="comment:" destination="slD-pk-k26" id="wLm-vD-40X"/>
-                                <segue destination="xQR-qX-9El" kind="show" id="SDh-5Y-CVL"/>
+                                <segue destination="xQR-qX-9El" kind="show" identifier="comment" id="SDh-5Y-CVL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -345,10 +345,10 @@
             </objects>
             <point key="canvasLocation" x="3604" y="289"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="KOS-cu-p9J">
             <objects>
-                <viewController id="xQR-qX-9El" sceneMemberID="viewController">
+                <viewController id="xQR-qX-9El" customClass="ReplyViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UH7-mJ-Vg8"/>
                         <viewControllerLayoutGuide type="bottom" id="aC4-ov-MCx"/>
@@ -356,9 +356,32 @@
                     <view key="view" contentMode="scaleToFill" id="FaB-Am-0t9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Comment here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G1m-La-PvV">
+                                <rect key="frame" x="127" y="166" width="346" height="268"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G1m-La-PvV" firstAttribute="centerX" secondItem="FaB-Am-0t9" secondAttribute="centerX" id="fD5-89-Js2"/>
+                            <constraint firstItem="G1m-La-PvV" firstAttribute="centerY" secondItem="FaB-Am-0t9" secondAttribute="centerY" id="nSc-Qr-0o2"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="Aab-nR-dyW">
+                        <barButtonItem key="rightBarButtonItem" image="reply" id="sJz-L1-KNi">
+                            <connections>
+                                <action selector="submit:" destination="xQR-qX-9El" id="2qI-ye-OFN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="commentField" destination="G1m-La-PvV" id="mtp-dQ-77P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hR1-NO-2Nu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -499,6 +522,7 @@
         <image name="edit" width="32" height="32"/>
         <image name="feed" width="32" height="32"/>
         <image name="map" width="32" height="32"/>
+        <image name="reply" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>
     </resources>
 </document>

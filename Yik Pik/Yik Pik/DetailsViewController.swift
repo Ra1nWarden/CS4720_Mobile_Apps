@@ -48,17 +48,17 @@ class DetailsViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery {
-        let query = PFQuery(className: self.parseClassName!)
+        let query = item?.relationForKey("comments").query()
         
         // If no objects are loaded in memory, we look to the cache first to fill the table
         // and then subsequently do a query against the network.
         if self.objects!.count == 0 {
-            query.cachePolicy = .CacheThenNetwork
+            query!.cachePolicy = .CacheThenNetwork
         }
         
-        query.orderByDescending("createdAt")
+        query!.orderByDescending("createdAt")
         
-        return query
+        return query!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
@@ -71,23 +71,24 @@ class DetailsViewController: PFQueryTableViewController {
         
         // Configure the cell to show todo item with a priority at the bottom
         if let object = object {
-            cell!.textLabel?.text = object["text"] as? String
-            let priority = object["priority"] as? String
-            cell!.detailTextLabel?.text = "Priority \(priority)"
+            cell!.detailTextLabel?.text = object["content"] as? String
         }
         
         return cell
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "comment" {
+            let destination = segue.destinationViewController as? ReplyViewController
+            destination!.item = item
+        }
     }
-    */
 
 }

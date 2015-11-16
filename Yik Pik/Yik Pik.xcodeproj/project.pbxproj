@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		06F9F37E4F79F71B9ABA96B6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED6A64F0A418282080C115 /* Pods.framework */; };
 		E46AC1F11BF9832F0014822E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AC1F01BF9832F0014822E /* DetailsViewController.swift */; };
+		E46AC1F31BF98FBA0014822E /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AC1F21BF98FBA0014822E /* ReplyViewController.swift */; };
 		E49D62351BF6DA89008B6910 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */; };
 		E49D62371BF6DA89008B6910 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D622F1BF6DA89008B6910 /* HomeViewController.swift */; };
 		E49D62381BF6DA89008B6910 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62301BF6DA89008B6910 /* MapViewController.swift */; };
 		E49D62391BF6DA89008B6910 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62311BF6DA89008B6910 /* RegisterViewController.swift */; };
 		E49D623A1BF6DA89008B6910 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62321BF6DA89008B6910 /* SettingsViewController.swift */; };
-		E49D623B1BF6DA89008B6910 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62331BF6DA89008B6910 /* UserInfoViewController.swift */; };
 		E49D623C1BF6DA89008B6910 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */; };
 		E4AD4DB31BF6C793008039BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AD4DB21BF6C793008039BE /* AppDelegate.swift */; };
 		E4AD4DB81BF6C793008039BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4AD4DB61BF6C793008039BE /* Main.storyboard */; };
@@ -31,12 +31,12 @@
 		3B838D822E6ADA465848C224 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2ED6A64F0A418282080C115 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46AC1F01BF9832F0014822E /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		E46AC1F21BF98FBA0014822E /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		E49D622F1BF6DA89008B6910 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E49D62301BF6DA89008B6910 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E49D62311BF6DA89008B6910 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E49D62321BF6DA89008B6910 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		E49D62331BF6DA89008B6910 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E4AD4DAF1BF6C793008039BE /* Yik Pik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yik Pik.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4AD4DB21BF6C793008039BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +108,6 @@
 				E49D62301BF6DA89008B6910 /* MapViewController.swift */,
 				E49D62311BF6DA89008B6910 /* RegisterViewController.swift */,
 				E49D62321BF6DA89008B6910 /* SettingsViewController.swift */,
-				E49D62331BF6DA89008B6910 /* UserInfoViewController.swift */,
 				E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */,
 				E46AC1F01BF9832F0014822E /* DetailsViewController.swift */,
 				E4AD4DB21BF6C793008039BE /* AppDelegate.swift */,
@@ -118,6 +117,7 @@
 				E4AD4DBE1BF6C793008039BE /* LaunchScreen.storyboard */,
 				E4AD4DC11BF6C793008039BE /* Info.plist */,
 				E4AD4DB91BF6C793008039BE /* Yik_Pik.xcdatamodeld */,
+				E46AC1F21BF98FBA0014822E /* ReplyViewController.swift */,
 			);
 			path = "Yik Pik";
 			sourceTree = "<group>";
@@ -248,11 +248,11 @@
 				E49D62371BF6DA89008B6910 /* HomeViewController.swift in Sources */,
 				E49D623C1BF6DA89008B6910 /* WelcomeViewController.swift in Sources */,
 				E4EFAD961BF97662006A3552 /* FeedViewCell.swift in Sources */,
+				E46AC1F31BF98FBA0014822E /* ReplyViewController.swift in Sources */,
 				E4EFAD8A1BF947AA006A3552 /* FeedViewController.swift in Sources */,
 				E49D62381BF6DA89008B6910 /* MapViewController.swift in Sources */,
 				E49D62391BF6DA89008B6910 /* RegisterViewController.swift in Sources */,
 				E49D62351BF6DA89008B6910 /* ComposeViewController.swift in Sources */,
-				E49D623B1BF6DA89008B6910 /* UserInfoViewController.swift in Sources */,
 				E4AD4DBB1BF6C793008039BE /* Yik_Pik.xcdatamodeld in Sources */,
 				E4AD4DB31BF6C793008039BE /* AppDelegate.swift in Sources */,
 				E49D623A1BF6DA89008B6910 /* SettingsViewController.swift in Sources */,

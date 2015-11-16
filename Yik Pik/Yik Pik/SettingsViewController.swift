@@ -42,7 +42,7 @@ class SettingsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -51,8 +51,11 @@ class SettingsViewController: UITableViewController {
             cell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         }
         
-        cell!.textLabel!.text = "Log out"
-
+        if indexPath.row == 0 {
+            cell!.textLabel!.text = "About"
+        } else {
+            cell!.textLabel!.text = "Log out"
+        }
         return cell!
     }
     
@@ -65,14 +68,18 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        PFUser.logOutInBackgroundWithBlock {
-            (error: NSError?) -> Void in
-            if error == nil{
-                self.alert("Log out", content: "Success!")
-                self.navigationController!.popToRootViewControllerAnimated(true)
-            } else {
-                self.alert("Log out failure", content: "Network error!")
+        if indexPath.row == 1 {
+            PFUser.logOutInBackgroundWithBlock {
+                (error: NSError?) -> Void in
+                if error == nil{
+                    self.alert("Log out", content: "Success!")
+                    self.navigationController!.popToRootViewControllerAnimated(true)
+                } else {
+                    self.alert("Log out failure", content: "Network error!")
+                }
             }
+        } else {
+            alert("About", content: "Nick and Zihao's CS 4720 iOS project.")
         }
     }
 

@@ -24,6 +24,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
         titleField.text = ""
         image.image = nil
     }

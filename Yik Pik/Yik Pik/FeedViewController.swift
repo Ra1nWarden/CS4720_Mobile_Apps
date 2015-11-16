@@ -14,8 +14,12 @@ class FeedViewController: PFQueryTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,7 +91,6 @@ class FeedViewController: PFQueryTableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        NSLog("segue id is %s", segue.identifier!)
         if segue.identifier == "details" {
             let destinationViewController = segue.destinationViewController as? DetailsViewController
             let selectedObject = self.objectAtIndexPath(self.tableView!.indexPathForSelectedRow)

@@ -13,7 +13,6 @@ class SettingsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let insets = UIEdgeInsets.init(top: 60, left: 0, bottom: 0, right: 0)
         self.tableView.contentInset = insets
 
@@ -22,6 +21,11 @@ class SettingsViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

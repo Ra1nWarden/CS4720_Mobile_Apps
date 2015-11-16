@@ -20,7 +20,6 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        
         lm=CLLocationManager();
         lm.delegate=self;
         lm.requestAlwaysAuthorization();
@@ -34,6 +33,11 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
             map.setRegion(size, animated: true);
         }
         addPins()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     func addPins() {

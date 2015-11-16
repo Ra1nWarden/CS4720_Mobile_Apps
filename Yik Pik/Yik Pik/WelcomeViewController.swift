@@ -22,6 +22,9 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        if PFUser.currentUser() != nil {
+            performSegueWithIdentifier("login", sender: nil)
+        }
         userNameField.delegate=self;
         passwordField.delegate=self;
         

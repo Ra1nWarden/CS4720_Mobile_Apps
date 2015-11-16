@@ -12,8 +12,12 @@ class HomeViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.title = "Yik Pik"
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
 
 }

@@ -25,14 +25,14 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
         lm.requestAlwaysAuthorization();
         lm.desiredAccuracy=kCLLocationAccuracyBest;
         lm.startUpdatingLocation();
-        
-        if (CLLocationManager.locationServicesEnabled()) {
-            map.centerCoordinate=lm.location!.coordinate;
-            map.showsUserLocation=true;
-            let size=MKCoordinateRegionMakeWithDistance(lm.location!.coordinate, 100, 100);
-            map.setRegion(size, animated: true);
-        }
         addPins()
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        map.centerCoordinate=lm.location!.coordinate;
+        map.showsUserLocation=true;
+        let size=MKCoordinateRegionMakeWithDistance(lm.location!.coordinate, 100, 100);
+        map.setRegion(size, animated: true);
     }
     
     override func viewDidAppear(animated: Bool) {

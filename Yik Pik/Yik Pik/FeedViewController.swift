@@ -32,7 +32,7 @@ class FeedViewController: PFQueryTableViewController {
         parseClassName = "Pik"
         pullToRefreshEnabled = true
         paginationEnabled = true
-        objectsPerPage = 10
+        objectsPerPage = 50
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,7 +40,7 @@ class FeedViewController: PFQueryTableViewController {
         parseClassName = "Pik"
         pullToRefreshEnabled = true
         paginationEnabled = true
-        objectsPerPage = 10
+        objectsPerPage = 50
     }
     
     override func queryForTable() -> PFQuery {

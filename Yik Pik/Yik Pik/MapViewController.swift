@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 import MapKit
-import CoreLocation;
+import CoreLocation
+import Parse
 
 class MapViewController : UIViewController, CLLocationManagerDelegate {
 
@@ -32,7 +33,29 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
             let size=MKCoordinateRegionMakeWithDistance(lm.location!.coordinate, 100, 100);
             map.setRegion(size, animated: true);
         }
-        
+        addPins()
+    }
+    
+    func addPins() {
+        let query = PFQuery(className: "Pik")
+        query.limit = 20
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error != nil {
+                let alert = UIAlertView()
+                alert.title = "Error"
+                alert.message = "Error in retrieving objects!"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            } else {
+                // objects has all the Posts the current user liked.
+                for object in objects! {
+                    let pin = MKPointAnnotation()
+                    pin.coordinate = CLLocationCoordinate2D.init(latitude: (object["latitude"] as? CLLocationDegrees)!, longitude: (object["longitude"] as? CLLocationDegrees)!)
+                    self.map.addAnnotation(pin)
+                }
+            }
+        }
     }
 
 }

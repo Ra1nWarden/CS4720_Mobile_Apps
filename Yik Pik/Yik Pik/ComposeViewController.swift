@@ -25,8 +25,6 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
-        titleField.text = ""
-        image.image = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,8 +76,9 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
             (succeeded: Bool, error: NSError?) -> Void in
             if error == nil && succeeded {
                 self.alert("Post status", content: "Success!")
+                self.titleField.text = ""
+                self.image.image = nil
                 self.tabBarController!.selectedIndex = 0
-                
             } else {
                 self.alert("Post status", content: "Network error!")
             }

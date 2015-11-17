@@ -27,6 +27,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
+        alert("Warning", content: "Taking pickture is only allowed in portrait mode! :)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,6 +106,11 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        alert("Warning", content: "Taking pickture is only allowed in portrait mode! :)")
     }
     
     /*

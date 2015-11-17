@@ -9,7 +9,8 @@
 import UIKit
 import Parse
 
-class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
+    UITextFieldDelegate {
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleField: UITextField!
@@ -18,6 +19,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleField.delegate = self
         setUpLocationManager()
         // Do any additional setup after loading the view.
     }
@@ -98,6 +100,11 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         locationManager.requestAlwaysAuthorization();
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.startUpdatingLocation();
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     /*

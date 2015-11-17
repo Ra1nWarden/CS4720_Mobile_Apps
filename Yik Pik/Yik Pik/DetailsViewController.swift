@@ -118,4 +118,9 @@ class DetailsViewController: PFQueryTableViewController {
         }
     }
 
+    @IBAction func share(sender: AnyObject) {
+        let message = photo.image;
+        let controller=UIActivityViewController(activityItems: [message!], applicationActivities: nil);
+        presentViewController(controller, animated: true, completion: nil);
+    }
 }

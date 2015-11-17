@@ -27,7 +27,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
-        alert("Warning", content: "Taking pickture is only allowed in portrait mode! :)")
+        alert("Warning", content: "Taking picture is only allowed in portrait mode! :)")
     }
 
     override func didReceiveMemoryWarning() {

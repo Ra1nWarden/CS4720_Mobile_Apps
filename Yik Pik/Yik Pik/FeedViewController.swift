@@ -9,9 +9,12 @@
 import UIKit
 import Parse
 import ParseUI
+import CoreMotion
 
 class FeedViewController: PFQueryTableViewController {
 
+    var motion_manager=CMMotionManager();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -87,6 +90,21 @@ class FeedViewController: PFQueryTableViewController {
         self.performSegueWithIdentifier("details", sender: nil)
     }
 
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if (motion == .MotionShake) {
+            self.loadObjects()
+            alert("Refresh",content: "Images refreshed");
+        }
+    }
+    
+    func alert(title: String, content: String) {
+        let alert = UIAlertView()
+        alert.title = title
+        alert.message = content
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.

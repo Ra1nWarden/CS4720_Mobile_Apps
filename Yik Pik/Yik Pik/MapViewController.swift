@@ -29,10 +29,12 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        map.centerCoordinate=lm.location!.coordinate;
-        map.showsUserLocation=true;
-        let size=MKCoordinateRegionMakeWithDistance(lm.location!.coordinate, 100, 100);
-        map.setRegion(size, animated: true);
+        if !map.showsUserLocation {
+            map.centerCoordinate=lm.location!.coordinate;
+            map.showsUserLocation=true;
+            let size=MKCoordinateRegionMakeWithDistance(lm.location!.coordinate, 100, 100);
+            map.setRegion(size, animated: true);
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

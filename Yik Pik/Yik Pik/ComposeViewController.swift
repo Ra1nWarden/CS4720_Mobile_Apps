@@ -21,13 +21,13 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
         titleField.delegate = self
         setUpLocationManager()
+        alert("Warning", content: "Taking picture is only allowed in portrait mode! :)")
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
-        alert("Warning", content: "Taking picture is only allowed in portrait mode! :)")
     }
 
     override func didReceiveMemoryWarning() {

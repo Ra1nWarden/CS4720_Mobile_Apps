@@ -92,6 +92,10 @@ class DetailsViewController: PFQueryTableViewController {
         return cell
     }
     
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("comment_detail", sender: nil)
+    }
 
     
     // MARK: - Navigation
@@ -103,6 +107,14 @@ class DetailsViewController: PFQueryTableViewController {
         if segue.identifier == "comment" {
             let destination = segue.destinationViewController as? ReplyViewController
             destination!.item = item
+        }
+        if segue.identifier == "comment_detail" {
+            let destination = segue.destinationViewController as? CommentDetailViewController
+            let selectedObject = self.objectAtIndexPath(self.tableView!.indexPathForSelectedRow)
+            let user = selectedObject?["author"] as? PFUser
+            let userId = user?.objectId
+            destination?.author = nameMaps.objectForKey(userId!) as? String
+            destination?.comment = selectedObject?["content"] as? String
         }
     }
 

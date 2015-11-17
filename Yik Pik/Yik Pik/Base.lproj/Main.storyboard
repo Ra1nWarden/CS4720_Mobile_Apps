@@ -300,7 +300,7 @@
         <scene sceneID="96W-Q8-szw">
             <objects>
                 <tableViewController id="slD-pk-k26" customClass="DetailsViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RyW-eO-fhs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RyW-eO-fhs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -320,6 +320,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="fKM-55-Nc5" kind="show" identifier="comment_detail" id="i0O-FK-3Ld"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -386,6 +389,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hR1-NO-2Nu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4304" y="289"/>
+        </scene>
+        <!--Comment Detail View Controller-->
+        <scene sceneID="zhN-Hk-d9X">
+            <objects>
+                <viewController id="fKM-55-Nc5" customClass="CommentDetailViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2gO-nW-13y"/>
+                        <viewControllerLayoutGuide type="bottom" id="RvM-4H-5aU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TLb-xl-RaT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Li6-tA-cMC">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RvM-4H-5aU" firstAttribute="top" secondItem="Li6-tA-cMC" secondAttribute="bottom" id="bSc-e7-Wfj"/>
+                            <constraint firstAttribute="trailing" secondItem="Li6-tA-cMC" secondAttribute="trailing" id="bTm-Le-xxp"/>
+                            <constraint firstItem="Li6-tA-cMC" firstAttribute="top" secondItem="2gO-nW-13y" secondAttribute="bottom" id="e1M-Wr-hvm"/>
+                            <constraint firstItem="Li6-tA-cMC" firstAttribute="leading" secondItem="TLb-xl-RaT" secondAttribute="leading" id="wAs-ST-o6r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailTexts" destination="Li6-tA-cMC" id="E8Z-BX-kFK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJL-Kv-tuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4304" y="977"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="LBX-4A-xIw">

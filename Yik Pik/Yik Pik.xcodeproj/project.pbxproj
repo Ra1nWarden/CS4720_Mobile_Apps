@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06F9F37E4F79F71B9ABA96B6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED6A64F0A418282080C115 /* Pods.framework */; };
+		19AE541A1BFAA62E00285952 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AE54191BFAA62E00285952 /* CommentDetailViewController.swift */; };
 		E46AC1F11BF9832F0014822E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AC1F01BF9832F0014822E /* DetailsViewController.swift */; };
 		E46AC1F31BF98FBA0014822E /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AC1F21BF98FBA0014822E /* ReplyViewController.swift */; };
 		E49D62351BF6DA89008B6910 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0F135E07482721AA027B567C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		19AE54191BFAA62E00285952 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
 		3B838D822E6ADA465848C224 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2ED6A64F0A418282080C115 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46AC1F01BF9832F0014822E /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				E4AD4DBE1BF6C793008039BE /* LaunchScreen.storyboard */,
 				E4AD4DC11BF6C793008039BE /* Info.plist */,
 				E4AD4DB91BF6C793008039BE /* Yik_Pik.xcdatamodeld */,
+				19AE54191BFAA62E00285952 /* CommentDetailViewController.swift */,
 			);
 			path = "Yik Pik";
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				E4AD4DB31BF6C793008039BE /* AppDelegate.swift in Sources */,
 				E49D623A1BF6DA89008B6910 /* SettingsViewController.swift in Sources */,
 				E46AC1F11BF9832F0014822E /* DetailsViewController.swift in Sources */,
+				19AE541A1BFAA62E00285952 /* CommentDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

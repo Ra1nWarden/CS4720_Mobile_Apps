@@ -108,11 +108,6 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         return true
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-        alert("Warning", content: "Taking pickture is only allowed in portrait mode! :)")
-    }
-    
     /*
     // MARK: - Navigation
 

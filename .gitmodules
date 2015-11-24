@@ -1,0 +1,3 @@
+[submodule "YikPikServer"]
+	path = YikPikServer
+	url = https://github.com/Ra1nWarden/YikPikServer

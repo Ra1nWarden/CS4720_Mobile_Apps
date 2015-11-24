@@ -3,3 +3,4 @@ use_frameworks!
 pod 'Parse'
 pod 'ParseUI'
 pod 'SwiftRandom'
+pod 'Alamofire'

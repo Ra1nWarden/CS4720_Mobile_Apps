@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Alamofire
 
 class SettingsViewController: UITableViewController {
 
@@ -42,7 +43,7 @@ class SettingsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 3
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -53,6 +54,8 @@ class SettingsViewController: UITableViewController {
         
         if indexPath.row == 0 {
             cell!.textLabel!.text = "About"
+        } else if indexPath.row == 1 {
+            cell!.textLabel!.text = "Privacy"
         } else {
             cell!.textLabel!.text = "Log out"
         }
@@ -68,7 +71,7 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 1 {
+        if indexPath.row == 2 {
             PFUser.logOutInBackgroundWithBlock {
                 (error: NSError?) -> Void in
                 if error == nil{
@@ -78,8 +81,15 @@ class SettingsViewController: UITableViewController {
                     self.alert("Log out failure", content: "Network error!")
                 }
             }
-        } else {
+        } else if indexPath.row == 0 {
             alert("About", content: "Nick and Zihao's CS 4720 iOS project.")
+        } else if indexPath.row == 1 {
+            Alamofire.request(.GET, "https://cs4720.herokuapp.com/privacy")
+                .responseJSON { response in
+                    if let JSON = response.result.value {
+                        self.alert("Privacy", content: JSON["content"] as! String);
+                    }
+            }
         }
     }
 

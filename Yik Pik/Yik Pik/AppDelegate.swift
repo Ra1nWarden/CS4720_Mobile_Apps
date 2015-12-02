@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.setApplicationId("Sj2MVtpkWIg4Cku0Pm57r0f8f43beByhFcFFM8DI", clientKey: "i0kVGyUzzSMI4S0ywzPc5ui4pwZkAu9WUYSdAEOU")
+        UILabel.appearance().font = UIFont(name: "Quicksand-Bold", size: 15);
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "Quicksand-Bold", size: 30)!,  NSForegroundColorAttributeName: UIColor.blueColor()];
         return true
     }
 

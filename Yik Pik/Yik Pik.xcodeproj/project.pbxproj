@@ -17,6 +17,8 @@
 		E49D62391BF6DA89008B6910 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62311BF6DA89008B6910 /* RegisterViewController.swift */; };
 		E49D623A1BF6DA89008B6910 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62321BF6DA89008B6910 /* SettingsViewController.swift */; };
 		E49D623C1BF6DA89008B6910 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */; };
+		E4A479E91C0FA8B30054D554 /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4A479E81C0FA8B30054D554 /* Quicksand-Regular.otf */; };
+		E4A479EB1C0FAAAA0054D554 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4A479EA1C0FAAAA0054D554 /* Quicksand-Bold.otf */; };
 		E4AD4DB31BF6C793008039BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AD4DB21BF6C793008039BE /* AppDelegate.swift */; };
 		E4AD4DB81BF6C793008039BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4AD4DB61BF6C793008039BE /* Main.storyboard */; };
 		E4AD4DBB1BF6C793008039BE /* Yik_Pik.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4AD4DB91BF6C793008039BE /* Yik_Pik.xcdatamodeld */; };
@@ -40,6 +42,8 @@
 		E49D62311BF6DA89008B6910 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E49D62321BF6DA89008B6910 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		E4A479E81C0FA8B30054D554 /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
+		E4A479EA1C0FAAAA0054D554 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
 		E4AD4DAF1BF6C793008039BE /* Yik Pik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yik Pik.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4AD4DB21BF6C793008039BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4AD4DB71BF6C793008039BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 		E4AD4DB11BF6C793008039BE /* Yik Pik */ = {
 			isa = PBXGroup;
 			children = (
+				E4A479E81C0FA8B30054D554 /* Quicksand-Regular.otf */,
+				E4A479EA1C0FAAAA0054D554 /* Quicksand-Bold.otf */,
 				E4AD4DB21BF6C793008039BE /* AppDelegate.swift */,
 				E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */,
 				E49D622F1BF6DA89008B6910 /* HomeViewController.swift */,
@@ -187,10 +193,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A479EB1C0FAAAA0054D554 /* Quicksand-Bold.otf in Resources */,
 				E4EFAD941BF975A5006A3552 /* FeedViewCell.xib in Resources */,
 				E4AD4DC01BF6C793008039BE /* LaunchScreen.storyboard in Resources */,
 				E4AD4DBD1BF6C793008039BE /* Assets.xcassets in Resources */,
 				E4AD4DB81BF6C793008039BE /* Main.storyboard in Resources */,
+				E4A479E91C0FA8B30054D554 /* Quicksand-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,12 +16,16 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate, CLLocationMa
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var latText: UILabel!
     @IBOutlet weak var longText: UILabel!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var submitButton: UIButton!
     
     var lm: CLLocationManager!;
     let keyForUsername = "username";
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        registerButton.titleLabel?.font = UIFont(name: "Quicksand-Bold", size: 15)!;
+        submitButton.titleLabel?.font = UIFont(name: "Quicksand-Bold", size: 15)!;
         if PFUser.currentUser() != nil {
             performSegueWithIdentifier("login", sender: nil)
         }

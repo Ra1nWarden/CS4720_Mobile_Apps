@@ -59,6 +59,7 @@ class SettingsViewController: UITableViewController {
         } else {
             cell!.textLabel!.text = "Log out"
         }
+        cell!.textLabel?.font = UIFont(name: "Quicksand-Bold", size: 15)!;
         return cell!
     }
     

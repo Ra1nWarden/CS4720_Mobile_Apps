@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Parse
+import SwiftColors
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Parse.setApplicationId("Sj2MVtpkWIg4Cku0Pm57r0f8f43beByhFcFFM8DI", clientKey: "i0kVGyUzzSMI4S0ywzPc5ui4pwZkAu9WUYSdAEOU")
         UILabel.appearance().font = UIFont(name: "Quicksand-Bold", size: 15);
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "Quicksand-Bold", size: 30)!,  NSForegroundColorAttributeName: UIColor.blueColor()];
+        UITextView.appearance().font = UIFont(name: "Quicksand-Bold", size: 15)!;
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "Quicksand-Bold", size: 30)!,  NSForegroundColorAttributeName: UIColor.whiteColor()];
+        UINavigationBar.appearance().barTintColor = UIColor(hexString: "30DBBD");
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor();
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Quicksand-Bold", size: 15)!,  NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal);
         return true
     }
 

@@ -14,11 +14,13 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
     
     var locationManager: CLLocationManager!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        submitButton.titleLabel?.font = UIFont(name: "Quicksand-Bold", size: 15)!;
         titleField.delegate = self
         setUpLocationManager()
         alert("Warning", content: "Taking picture is only allowed in portrait mode! :)")

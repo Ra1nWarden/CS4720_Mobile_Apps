@@ -108,6 +108,8 @@
                         <outlet property="latText" destination="Jed-aG-E7d" id="eZg-N9-nmd"/>
                         <outlet property="longText" destination="GaU-ta-Cnw" id="Ebr-Bo-ggB"/>
                         <outlet property="passwordField" destination="gIT-0u-v7h" id="diY-E3-SBt"/>
+                        <outlet property="registerButton" destination="zlk-wA-E9T" id="f0R-yO-75J"/>
+                        <outlet property="submitButton" destination="Odi-Op-UDX" id="JXV-Yn-heu"/>
                         <outlet property="userNameField" destination="T38-cd-Vo1" id="IQP-19-DCM"/>
                     </connections>
                 </viewController>
@@ -233,7 +235,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NG-IE-YDf">
-                                        <rect key="frame" x="160" y="417" width="49" height="30"/>
+                                        <rect key="frame" x="152" y="417" width="64" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
@@ -255,12 +257,13 @@
                     <tabBarItem key="tabBarItem" title="New" image="edit" id="9IY-qj-2z3"/>
                     <connections>
                         <outlet property="image" destination="mGj-wV-5vJ" id="Hln-Jl-i4g"/>
+                        <outlet property="submitButton" destination="1NG-IE-YDf" id="06m-QQ-n9L"/>
                         <outlet property="titleField" destination="wpH-xn-QPj" id="tYX-Vq-EyD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVt-3g-YFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2805" y="-384.99999999999989"/>
+            <point key="canvasLocation" x="2805" y="-385"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Ahm-en-cLl">
@@ -476,14 +479,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wA-Jh-IHf">
-                                <rect key="frame" x="261" y="447" width="49" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submitRegistration:" destination="Bhf-zS-P9N" eventType="touchUpInside" id="Buh-Ve-oMR"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dV6-IH-wty">
                                 <rect key="frame" x="141" y="206" width="319" height="187"/>
                                 <subviews>
@@ -530,6 +525,14 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wA-Jh-IHf">
+                                <rect key="frame" x="265" y="447" width="70" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitRegistration:" destination="Bhf-zS-P9N" eventType="touchUpInside" id="Buh-Ve-oMR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -543,12 +546,13 @@
                     <connections>
                         <outlet property="confirmField" destination="D77-fE-cP3" id="iS9-sl-wde"/>
                         <outlet property="passwordField" destination="oMl-el-q20" id="AMe-J7-WM0"/>
+                        <outlet property="submitButon" destination="4wA-Jh-IHf" id="WHr-1g-D8Y"/>
                         <outlet property="usernameField" destination="3rF-bs-A1m" id="8cb-xq-oIS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nr6-G6-yH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="495" y="1446.9999999999995"/>
+            <point key="canvasLocation" x="495" y="1446"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DfB-mp-4l0">

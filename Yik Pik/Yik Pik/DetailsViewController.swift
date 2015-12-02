@@ -87,6 +87,8 @@ class DetailsViewController: PFQueryTableViewController {
             }
             cell!.textLabel?.text = userName
             cell!.detailTextLabel?.text = object["content"] as? String
+            cell!.textLabel?.font = UIFont(name: "Quicksand-Bold", size: 15)!
+            cell!.detailTextLabel?.font = UIFont(name: "Quicksand-Regular", size: 12)!;
         }
         
         return cell

@@ -6,12 +6,14 @@ PODS:
   - ParseUI (1.1.6):
     - Bolts/Tasks (~> 1.2)
     - Parse (~> 1.8)
+  - SwiftColors (0.3.3)
   - SwiftRandom (0.1.7)
 
 DEPENDENCIES:
   - Alamofire
   - Parse
   - ParseUI
+  - SwiftColors
   - SwiftRandom
 
 SPEC CHECKSUMS:
@@ -19,6 +21,7 @@ SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   ParseUI: 8a22e448c03f825203d8c379c80523517f68baa3
+  SwiftColors: c02dc874cda6319a20e2fd75385e1ccffc17b941
   SwiftRandom: a03b68cbcda1b03d0fef5a1b87296f9500b6eac3
 
 COCOAPODS: 0.39.0

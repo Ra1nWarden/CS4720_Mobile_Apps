@@ -17,8 +17,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var confirmField: UITextField!
     
+    @IBOutlet weak var submitButon: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad();
+        submitButon.titleLabel?.font = UIFont(name: "Quicksand-Bold", size: 15)!;
         usernameField.delegate = self
         passwordField.delegate = self
         confirmField.delegate = self

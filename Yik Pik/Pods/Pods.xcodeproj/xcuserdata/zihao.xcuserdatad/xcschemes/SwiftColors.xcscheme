@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3D035B6ADFA2A5E48468FE39'
-               BlueprintName = 'Parse'
+               BlueprintIdentifier = '2F447247111FC46C7D9A6A50'
+               BlueprintName = 'SwiftColors'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Parse.framework'>
+               BuildableName = 'SwiftColors.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

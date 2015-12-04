@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
-    UITextFieldDelegate {
+    UITextFieldDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleField: UITextField!
@@ -147,6 +147,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func setUpLocationManager() {
         locationManager = CLLocationManager();
+        locationManager.delegate = self
         locationManager.requestAlwaysAuthorization();
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.startUpdatingLocation();

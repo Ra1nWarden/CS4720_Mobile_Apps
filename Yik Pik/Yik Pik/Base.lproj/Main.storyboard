@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KaA-O4-rq6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KaA-O4-rq6">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -150,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDn-Ng-moK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2848" y="987"/>
+            <point key="canvasLocation" x="2837" y="1659"/>
         </scene>
         <!--Settings-->
         <scene sceneID="SNi-9n-4da">
@@ -192,7 +192,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pne-X0-H98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2837" y="1703"/>
+            <point key="canvasLocation" x="2837" y="2396"/>
         </scene>
         <!--New-->
         <scene sceneID="ann-kx-FMB">
@@ -251,20 +251,24 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-fc-cBx">
                                         <rect key="frame" x="8" y="99" width="34" height="21"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="giv-bA-80G">
                                         <rect key="frame" x="8" y="128" width="234" height="30"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbW-wY-fU6">
                                         <rect key="frame" x="250" y="99" width="310" height="222"/>
+                                        <animations/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0i-3T-xBw">
                                         <rect key="frame" x="93" y="291" width="64" height="30"/>
+                                        <animations/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submitPik2:" destination="6bi-cD-rD1" eventType="touchUpInside" id="7nV-WZ-ltu"/>
@@ -273,6 +277,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWg-h8-xKL">
                                         <rect key="frame" x="104" y="201" width="43" height="45"/>
+                                        <animations/>
                                         <state key="normal" title="Button" image="camera"/>
                                         <connections>
                                             <action selector="TakePhoto2:" destination="6bi-cD-rD1" eventType="touchUpInside" id="78G-DE-mlC"/>
@@ -280,6 +285,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -338,10 +344,12 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Feed" image="feed" id="ujn-RW-NMC"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBX-Or-LeT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2805" y="289.99999999999994"/>
+            <point key="canvasLocation" x="2837" y="298"/>
         </scene>
         <!--Title-->
         <scene sceneID="96W-Q8-szw">
@@ -500,10 +508,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="UZk-NG-WEg" kind="relationship" relationship="viewControllers" id="fsw-Ck-Cxw"/>
-                        <segue destination="6bi-cD-rD1" kind="relationship" relationship="viewControllers" id="Lf0-Pj-NZA"/>
-                        <segue destination="hc4-gi-J3Q" kind="relationship" relationship="viewControllers" id="76i-xp-v9c"/>
-                        <segue destination="sE4-kE-b9f" kind="relationship" relationship="viewControllers" id="Gqc-vr-lNh"/>
+                        <segue destination="UZk-NG-WEg" kind="relationship" relationship="viewControllers" id="vnC-al-fDK"/>
+                        <segue destination="mQJ-Xl-hXq" kind="relationship" relationship="viewControllers" id="8ab-2L-cvx"/>
+                        <segue destination="hc4-gi-J3Q" kind="relationship" relationship="viewControllers" id="uyh-GU-hIY"/>
+                        <segue destination="6bi-cD-rD1" kind="relationship" relationship="viewControllers" id="hZN-Oe-E7f"/>
+                        <segue destination="sE4-kE-b9f" kind="relationship" relationship="viewControllers" id="29r-rV-P0G"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVL-If-ygq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -616,11 +625,46 @@
             </objects>
             <point key="canvasLocation" x="495" y="657"/>
         </scene>
+        <!--Favorite-->
+        <scene sceneID="6B3-pE-aJe">
+            <objects>
+                <tableViewController title="Favorite" id="mQJ-Xl-hXq" customClass="FavoriteFeedViewController" customModule="Yik_Pik" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="381" sectionHeaderHeight="28" sectionFooterHeight="28" id="zpe-XJ-gOT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="381" id="XEe-Dd-RRM">
+                                <rect key="frame" x="0.0" y="92" width="600" height="381"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XEe-Dd-RRM" id="mP9-ad-WRn">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="380"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mQJ-Xl-hXq" id="9Z3-LM-0q6"/>
+                            <outlet property="delegate" destination="mQJ-Xl-hXq" id="Tuf-6L-4Zm"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favorite" id="X0l-hz-ECR"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xuo-10-SiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837" y="977"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera" width="100" height="100"/>
         <image name="comment" width="32" height="32"/>
         <image name="edit" width="32" height="32"/>
+        <image name="favorite" width="32" height="32"/>
         <image name="feed" width="32" height="32"/>
         <image name="map" width="32" height="32"/>
         <image name="reply" width="32" height="32"/>

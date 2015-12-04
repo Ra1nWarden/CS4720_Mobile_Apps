@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06F9F37E4F79F71B9ABA96B6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED6A64F0A418282080C115 /* Pods.framework */; };
 		19AE541A1BFAA62E00285952 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AE54191BFAA62E00285952 /* CommentDetailViewController.swift */; };
+		E4190AD21C117F7B0036F9F3 /* FavoriteFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4190AD11C117F7B0036F9F3 /* FavoriteFeedViewController.swift */; };
 		E46AC1F11BF9832F0014822E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AC1F01BF9832F0014822E /* DetailsViewController.swift */; };
 		E46AC1F31BF98FBA0014822E /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AC1F21BF98FBA0014822E /* ReplyViewController.swift */; };
 		E49D62351BF6DA89008B6910 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */; };
@@ -34,6 +35,7 @@
 		19AE54191BFAA62E00285952 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
 		3B838D822E6ADA465848C224 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2ED6A64F0A418282080C115 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4190AD11C117F7B0036F9F3 /* FavoriteFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteFeedViewController.swift; sourceTree = "<group>"; };
 		E46AC1F01BF9832F0014822E /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E46AC1F21BF98FBA0014822E /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		E49D622D1BF6DA89008B6910 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				E49D62341BF6DA89008B6910 /* WelcomeViewController.swift */,
 				E46AC1F01BF9832F0014822E /* DetailsViewController.swift */,
 				E46AC1F21BF98FBA0014822E /* ReplyViewController.swift */,
+				E4190AD11C117F7B0036F9F3 /* FavoriteFeedViewController.swift */,
 				E4AD4DB01BF6C793008039BE /* Products */,
 				E4AD4DB61BF6C793008039BE /* Main.storyboard */,
 				E4AD4DBC1BF6C793008039BE /* Assets.xcassets */,
@@ -166,7 +169,7 @@
 				TargetAttributes = {
 					E4AD4DAE1BF6C793008039BE = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 856TQUMVYK;
+						DevelopmentTeam = ASEVUMECUS;
 					};
 				};
 			};
@@ -265,6 +268,7 @@
 				E49D62381BF6DA89008B6910 /* MapViewController.swift in Sources */,
 				E49D62391BF6DA89008B6910 /* RegisterViewController.swift in Sources */,
 				E49D62351BF6DA89008B6910 /* ComposeViewController.swift in Sources */,
+				E4190AD21C117F7B0036F9F3 /* FavoriteFeedViewController.swift in Sources */,
 				E4AD4DBB1BF6C793008039BE /* Yik_Pik.xcdatamodeld in Sources */,
 				E4AD4DB31BF6C793008039BE /* AppDelegate.swift in Sources */,
 				E49D623A1BF6DA89008B6910 /* SettingsViewController.swift in Sources */,

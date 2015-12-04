@@ -1,18 +1,18 @@
 //
-//  FeedViewController.swift
+//  FavoriteFeedViewController.swift
 //  Yik Pik
 //
-//  Created by WangZihao on 11/15/15.
+//  Created by WangZihao on 12/4/15.
 //  Copyright © 2015 Nick and Zihao. All rights reserved.
 //
 
 import UIKit
-import Parse
-import ParseUI
 import CoreMotion
+import ParseUI
+import Parse
 
-class FeedViewController: PFQueryTableViewController {
-
+class FavoriteFeedViewController: PFQueryTableViewController {
+    
     var motion_manager = CMMotionManager();
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class FeedViewController: PFQueryTableViewController {
         super.viewDidAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,17 +47,18 @@ class FeedViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery {
-        let query = PFQuery(className: "Pik")
+        let user = PFUser.currentUser()
+        let query = user?.relationForKey("favorites").query()
         
         // If no objects are loaded in memory, we look to the cache first to fill the table
         // and then subsequently do a query against the network.
         if self.objects!.count == 0 {
-            query.cachePolicy = .CacheThenNetwork
+            query!.cachePolicy = .CacheThenNetwork
         }
         
-        query.orderByDescending("createdAt")
+        query!.orderByDescending("createdAt")
         
-        return query
+        return query!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
@@ -90,7 +91,7 @@ class FeedViewController: PFQueryTableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("details", sender: nil)
     }
-
+    
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if (motion == .MotionShake) {
             self.loadObjects()

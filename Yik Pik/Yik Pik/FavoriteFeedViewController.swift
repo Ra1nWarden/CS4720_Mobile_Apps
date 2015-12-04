@@ -83,13 +83,14 @@ class FavoriteFeedViewController: PFQueryTableViewController {
                 cell?.commentView.text = NSString(format: "%d comments", count) as String
             }
         }
+        cell?.selectionStyle = .None
         return cell
     }
     
     // MARK: - Navigation
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("details", sender: nil)
+        self.performSegueWithIdentifier("fav_details", sender: nil)
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
@@ -111,10 +112,11 @@ class FavoriteFeedViewController: PFQueryTableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "details" {
+        if segue.identifier == "fav_details" {
             let destinationViewController = segue.destinationViewController as? DetailsViewController
             let selectedObject = self.objectAtIndexPath(self.tableView!.indexPathForSelectedRow)
             destinationViewController!.item = selectedObject
+            destinationViewController!.fav = true
         }
     }
 

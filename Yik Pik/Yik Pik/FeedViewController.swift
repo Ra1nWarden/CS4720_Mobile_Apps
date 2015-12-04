@@ -14,6 +14,7 @@ import CoreMotion
 class FeedViewController: PFQueryTableViewController {
 
     var motion_manager = CMMotionManager();
+    var next_fav : Bool = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,13 +83,26 @@ class FeedViewController: PFQueryTableViewController {
                 cell?.commentView.text = NSString(format: "%d comments", count) as String
             }
         }
+        cell?.selectionStyle = .None
         return cell
     }
     
     // MARK: - Navigation
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("details", sender: nil)
+        let selectedObject = self.objectAtIndexPath(self.tableView!.indexPathForSelectedRow)
+        let user = PFUser.currentUser()
+        let query = user?.relationForKey("favorites").query()
+        let updated_query = query?.whereKey("objectId", equalTo: (selectedObject?.objectId)!)
+        updated_query?.countObjectsInBackgroundWithBlock {
+            (count: Int32, error: NSError?) -> Void in
+            if error == nil {
+                self.next_fav = count > 0
+                self.performSegueWithIdentifier("details", sender: nil)
+            } else {
+                self.alert("Error", content: "Network error!")
+            }
+        }
     }
 
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
@@ -112,6 +126,7 @@ class FeedViewController: PFQueryTableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "details" {
             let destinationViewController = segue.destinationViewController as? DetailsViewController
+            destinationViewController!.fav = next_fav
             let selectedObject = self.objectAtIndexPath(self.tableView!.indexPathForSelectedRow)
             destinationViewController!.item = selectedObject
         }

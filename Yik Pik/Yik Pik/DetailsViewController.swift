@@ -10,12 +10,15 @@ import UIKit
 import Parse
 import ParseUI
 import SwiftRandom
+import SevenSwitch
 
 class DetailsViewController: PFQueryTableViewController {
     
     var item: PFObject? = nil
     var nameMaps: NSMutableDictionary!
+    var fav: Bool = false
     
+    @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var photo: PFImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,11 @@ class DetailsViewController: PFQueryTableViewController {
             photo.loadInBackground()
             self.title = item!["title"] as? String
         }
-        
+        if fav {
+            favButton.setBackgroundImage(UIImage(named: "favorited"), forState: .Normal)
+        } else {
+            favButton.setBackgroundImage(UIImage(named: "favorite"), forState: .Normal)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -117,6 +124,27 @@ class DetailsViewController: PFQueryTableViewController {
             let userId = user?.objectId
             destination?.author = nameMaps.objectForKey(userId!) as? String
             destination?.comment = selectedObject?["content"] as? String
+        }
+    }
+    
+    @IBAction func favPressed(sender: AnyObject) {
+        if item == nil {
+            return
+        }
+        if fav {
+            favButton.setBackgroundImage(UIImage(named: "favorite"), forState: .Normal)
+            fav = false
+            let user = PFUser.currentUser()
+            let relation = user?.relationForKey("favorites")
+            relation?.removeObject(item!)
+            user?.saveInBackground()
+        } else {
+            favButton.setBackgroundImage(UIImage(named: "favorited"), forState: .Normal)
+            fav = true
+            let user = PFUser.currentUser()
+            let relation = user?.relationForKey("favorites")
+            relation?.addObject(item!)
+            user?.saveInBackground()
         }
     }
 

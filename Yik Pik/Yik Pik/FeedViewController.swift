@@ -71,8 +71,9 @@ class FeedViewController: PFQueryTableViewController {
         
         // Configure the cell to show todo item with a priority at the bottom
         if let object = object {
+            cell?.titleLabel
             cell?.titleLabel.text = object["title"] as? String
-            cell?.pictureView.contentMode = .ScaleAspectFit
+            cell?.pictureView.contentMode = .ScaleAspectFill
             cell?.pictureView.file = object["photo"] as? PFFile
             cell?.pictureView.loadInBackground()
             let query = object.relationForKey("comments").query()

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KaA-O4-rq6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KaA-O4-rq6">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -217,7 +217,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wpH-xn-QPj">
-                                        <rect key="frame" x="99" y="15" width="244" height="30"/>
+                                        <rect key="frame" x="99" y="15" width="221" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -246,19 +246,62 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Vt-eh-ome" userLabel="Landscape">
+                                <rect key="frame" x="20" y="77" width="560" height="447"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-fc-cBx">
+                                        <rect key="frame" x="8" y="99" width="34" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="giv-bA-80G">
+                                        <rect key="frame" x="8" y="128" width="234" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbW-wY-fU6">
+                                        <rect key="frame" x="250" y="99" width="310" height="222"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0i-3T-xBw">
+                                        <rect key="frame" x="93" y="291" width="64" height="30"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitPik2:" destination="6bi-cD-rD1" eventType="touchUpInside" id="7nV-WZ-ltu"/>
+                                            <action selector="submitPik:" destination="6bi-cD-rD1" eventType="touchUpInside" id="WiV-5F-bZe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWg-h8-xKL">
+                                        <rect key="frame" x="104" y="201" width="43" height="45"/>
+                                        <state key="normal" title="Button" image="camera"/>
+                                        <connections>
+                                            <action selector="TakePhoto2:" destination="6bi-cD-rD1" eventType="touchUpInside" id="78G-DE-mlC"/>
+                                            <action selector="takePhoto:" destination="6bi-cD-rD1" eventType="touchUpInside" id="f4c-qy-gO2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sNJ-LU-LKq" firstAttribute="centerY" secondItem="mrb-wG-Vp7" secondAttribute="centerY" id="73K-p4-ivS"/>
                             <constraint firstItem="sNJ-LU-LKq" firstAttribute="centerX" secondItem="mrb-wG-Vp7" secondAttribute="centerX" id="9jE-pE-xAE"/>
+                            <constraint firstItem="7Vt-eh-ome" firstAttribute="centerX" secondItem="mrb-wG-Vp7" secondAttribute="centerX" id="f0w-MZ-GHb"/>
+                            <constraint firstItem="7Vt-eh-ome" firstAttribute="centerY" secondItem="mrb-wG-Vp7" secondAttribute="centerY" id="j7D-pp-YSh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="New" image="edit" id="9IY-qj-2z3"/>
                     <connections>
                         <outlet property="image" destination="mGj-wV-5vJ" id="Hln-Jl-i4g"/>
+                        <outlet property="imageLand" destination="cbW-wY-fU6" id="qsK-tb-kcf"/>
+                        <outlet property="landscape" destination="7Vt-eh-ome" id="42u-Py-iQA"/>
+                        <outlet property="portrait" destination="sNJ-LU-LKq" id="GOZ-t1-dhg"/>
                         <outlet property="submitButton" destination="1NG-IE-YDf" id="06m-QQ-n9L"/>
+                        <outlet property="submitButtonLand" destination="y0i-3T-xBw" id="m7e-d3-cIi"/>
                         <outlet property="titleField" destination="wpH-xn-QPj" id="tYX-Vq-EyD"/>
+                        <outlet property="titleFieldLand" destination="giv-bA-80G" id="ekx-EN-7dp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVt-3g-YFK" userLabel="First Responder" sceneMemberID="firstResponder"/>

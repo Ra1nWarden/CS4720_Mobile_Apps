@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,33 +22,39 @@
                                 <rect key="frame" x="26" y="31" width="333" height="257"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW4-hj-dtI">
-                                <rect key="frame" x="170" y="296" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyk-Wq-94V">
-                                <rect key="frame" x="170" y="2" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UW4-hj-dtI" firstAttribute="centerX" secondItem="lCz-P8-rVw" secondAttribute="centerX" id="1aB-YZ-Nd8"/>
-                            <constraint firstItem="Cyk-Wq-94V" firstAttribute="centerX" secondItem="lCz-P8-rVw" secondAttribute="centerX" id="UTG-S9-cGh"/>
-                        </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Cv-0y-Ze0">
+                        <rect key="frame" x="0.0" y="274" width="1000" height="63"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW4-hj-dtI">
+                        <rect key="frame" x="191" y="308" width="42" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyk-Wq-94V">
+                        <rect key="frame" x="191" y="279" width="42" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <animations/>
                 <constraints>
                     <constraint firstItem="lCz-P8-rVw" firstAttribute="centerX" secondItem="PWS-Hr-5Uv" secondAttribute="centerX" id="W6K-tZ-GFS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="9Cv-0y-Ze0" secondAttribute="bottom" constant="-8" id="aby-3q-I2Z"/>
+                    <constraint firstItem="UW4-hj-dtI" firstAttribute="centerX" secondItem="PWS-Hr-5Uv" secondAttribute="centerX" id="b3W-kL-mTn"/>
                     <constraint firstItem="lCz-P8-rVw" firstAttribute="centerY" secondItem="PWS-Hr-5Uv" secondAttribute="centerY" id="cru-DR-CEw"/>
+                    <constraint firstItem="Cyk-Wq-94V" firstAttribute="centerX" secondItem="PWS-Hr-5Uv" secondAttribute="centerX" id="cwj-p6-ZvS"/>
+                    <constraint firstItem="UW4-hj-dtI" firstAttribute="top" secondItem="Cyk-Wq-94V" secondAttribute="bottom" constant="8" id="dJH-9e-s6a"/>
+                    <constraint firstItem="UW4-hj-dtI" firstAttribute="bottom" secondItem="PWS-Hr-5Uv" secondAttribute="bottomMargin" id="pTW-4u-Ysl"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>

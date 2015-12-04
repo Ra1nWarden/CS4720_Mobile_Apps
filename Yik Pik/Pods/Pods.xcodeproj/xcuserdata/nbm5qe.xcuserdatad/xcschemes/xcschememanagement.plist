@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -24,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>SwiftColors.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>SwiftRandom.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,12 +47,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>37D4F2C8127588CACF054F1ED6A6968E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3DD06F477D24AAC5A2903B7ADC302A67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>432ECC54282C84882B482CCB4CF227FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5B3A2129E23B903ED2DE722A24370068</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88822A8AA9AA89715C224580268232F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

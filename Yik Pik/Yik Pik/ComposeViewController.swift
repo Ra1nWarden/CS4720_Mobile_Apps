@@ -16,43 +16,84 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
+    @IBOutlet weak var titleFieldLand: UITextField!
+    @IBOutlet weak var imageLand: UIImageView!
+    @IBOutlet weak var submitButtonLand: UIButton!
+    
+    @IBOutlet weak var portrait: UIView!
+    @IBOutlet weak var landscape: UIView!
+    
+    var orientation: Bool = true;
+    var filename: String="";
+    
     var locationManager: CLLocationManager!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         submitButton.titleLabel?.font = UIFont(name: "Quicksand-Bold", size: 15)!;
+        submitButtonLand.titleLabel?.font = UIFont(name: "Quicksand-Bold", size: 15)!;
         titleField.delegate = self
+        titleFieldLand.delegate = self
         setUpLocationManager()
-        alert("Warning", content: "Taking picture is only allowed in portrait mode! :)")
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
+        if (self.view.bounds.width < self.view.bounds.height) {
+            rotateScreen(true)
+        }
+        else {
+            rotateScreen(false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func TakePhoto2(sender: AnyObject) {
+        takePhotoBase()
+    }
     
     @IBAction func takePhoto(sender: AnyObject) {
+        takePhotoBase()
+    }
+    
+    func takePhotoBase() {
         let controller : UIImagePickerController = UIImagePickerController()
         controller.sourceType = UIImagePickerControllerSourceType.Camera
         controller.delegate = self
         self.presentViewController(controller, animated: true, completion: nil)
+        if (self.view.bounds.width < self.view.bounds.height) {
+            rotateScreen(true)
+        }
+        else {
+            rotateScreen(false)
+        }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil);
         if info[UIImagePickerControllerOriginalImage] is UIImage {
             image.image=info[UIImagePickerControllerOriginalImage] as? UIImage;
+            imageLand.image=info[UIImagePickerControllerOriginalImage] as? UIImage;
         }
     }
 
     @IBAction func submitPik(sender: AnyObject) {
-        let enteredTitle = titleField.text
+        submitPikBase()
+    }
+
+    @IBAction func submitPik2(sender: AnyObject) {
+        submitPikBase()
+    }
+    
+    func submitPikBase() {
+
+        let enteredTitle = getFilename().text
         if enteredTitle!.isEmpty {
             alert("Empty title", content: "Please give it a title.")
             return
@@ -69,11 +110,17 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
             alert("Location service denied", content: "Please allow Yik Pik to use location service.")
             return
         }
+
         let pik = PFObject(className: "Pik")
         pik["author"] = PFUser.currentUser()
-        pik["latitude"] = locationManager.location!.coordinate.latitude
-        pik["longitude"] = locationManager.location!.coordinate.longitude
-        pik["title"] = titleField.text!
+        if (locationManager.location != nil) {
+            pik["latitude"] = locationManager.location!.coordinate.latitude
+            pik["longitude"] = locationManager.location!.coordinate.longitude
+        }
+
+        print("test: TEST")
+
+        pik["title"] = getFilename().text
         let imageData = UIImageJPEGRepresentation(image.image!, 0.7)
         let imageFile = PFFile(name:"image.png", data:imageData!)
         pik["photo"] = imageFile
@@ -82,7 +129,9 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
             if error == nil && succeeded {
                 self.alert("Post status", content: "Success!")
                 self.titleField.text = ""
+                self.titleFieldLand.text = ""
                 self.image.image = nil
+                self.imageLand.image = nil
                 self.tabBarController!.selectedIndex = 0
             } else {
                 self.alert("Post status", content: "Network error!")
@@ -105,9 +154,47 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         locationManager.startUpdatingLocation();
     }
     
+    func rotateScreen(portraitMode: Bool) {
+        if (portrait != nil && landscape != nil) {
+            if (portraitMode) {
+                landscape.hidden = true
+                portrait.hidden = false
+                filename = titleFieldLand.text!
+                titleField.text = filename
+                orientation = true
+            }
+            else {
+                landscape.hidden = false
+                portrait.hidden = true
+                filename = titleField.text!
+                titleFieldLand.text = filename
+                orientation = false
+            }
+        }
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func getFilename() -> UITextField {
+        if (orientation) {
+            return titleField
+        }
+        else {
+            return titleFieldLand
+        }
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator){
+        
+        if (size.height>size.width) {
+            rotateScreen(true)
+        }
+        else {
+            rotateScreen(false)
+        }
     }
     
     /*

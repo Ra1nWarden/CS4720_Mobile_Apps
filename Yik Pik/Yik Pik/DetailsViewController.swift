@@ -10,7 +10,6 @@ import UIKit
 import Parse
 import ParseUI
 import SwiftRandom
-import SevenSwitch
 
 class DetailsViewController: PFQueryTableViewController {
     

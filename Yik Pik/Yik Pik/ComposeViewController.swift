@@ -42,6 +42,8 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
+        titleField.text = filename
+        titleFieldLand.text = filename
         if (self.view.bounds.width < self.view.bounds.height) {
             rotateScreen(true)
         }
@@ -50,6 +52,9 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
 
+    override func viewDidDisappear(animated: Bool) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,16 +68,11 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func takePhotoBase() {
+        filename = getFilename().text!
         let controller : UIImagePickerController = UIImagePickerController()
         controller.sourceType = UIImagePickerControllerSourceType.Camera
         controller.delegate = self
         self.presentViewController(controller, animated: true, completion: nil)
-        if (self.view.bounds.width < self.view.bounds.height) {
-            rotateScreen(true)
-        }
-        else {
-            rotateScreen(false)
-        }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
@@ -117,8 +117,6 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
             pik["latitude"] = locationManager.location!.coordinate.latitude
             pik["longitude"] = locationManager.location!.coordinate.longitude
         }
-
-        print("test: TEST")
 
         pik["title"] = getFilename().text
         let imageData = UIImageJPEGRepresentation(image.image!, 0.7)

@@ -56,9 +56,11 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
             } else {
                 // objects has all the Posts the current user liked.
                 for object in objects! {
-                    let pin = MKPointAnnotation()
-                    pin.coordinate = CLLocationCoordinate2D.init(latitude: (object["latitude"] as? CLLocationDegrees)!, longitude: (object["longitude"] as? CLLocationDegrees)!)
-                    self.map.addAnnotation(pin)
+                    if (object["longitude"] != nil && object["latitude"] != nil) {
+                        let pin = MKPointAnnotation()
+                        pin.coordinate = CLLocationCoordinate2D.init(latitude: (object["latitude"] as? CLLocationDegrees)!, longitude: (object["longitude"] as? CLLocationDegrees)!)
+                        self.map.addAnnotation(pin)
+                    }
                 }
             }
         }
